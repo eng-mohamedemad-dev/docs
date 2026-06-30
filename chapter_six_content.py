@@ -16,18 +16,11 @@ ORANGE = "F59E0B"
 CHAPTER_SIX_FIGURES = [
     ("Figure 6.1", "Chapter-opening testing and evaluation background", 189),
     ("Figure 6.2", "Testing strategy and evidence pipeline", 190),
-    ("Figure 6.3", "Requirements-to-tests traceability matrix", 193),
     ("Figure 6.4", "Laravel full-suite execution screenshot", 194),
-    ("Figure 6.5", "Backend functional-validation coverage map", 196),
-    ("Figure 6.6", "Security and integrity validation map", 198),
-    ("Figure 6.7", "Realtime, queue, and notification validation map", 200),
     ("Figure 6.8", "Web-console browser testing map", 201),
     ("Figure 6.9", "Flutter mobile testing inventory map", 202),
     ("Figure 6.10", "AI evaluation dashboard and confusion matrix", 204),
     ("Figure 6.11", "Streaming and gateway evaluation map", 206),
-    ("Figure 6.12", "Performance benchmark summary", 208),
-    ("Figure 6.13", "Regression and release-gate checklist", 210),
-    ("Figure 6.14", "Chapter Six evidence insertion checklist", 212),
 ]
 
 
@@ -174,7 +167,7 @@ def chapter_six_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 6.2",
                 "Testing strategy and evidence pipeline",
-                "CH06_FIG_02_Testing_Strategy_Evidence_Pipeline.png",
+                "Testing_Strategy_Evidence_Pipeline.png",
                 5.4,
             ),
         },
@@ -247,12 +240,12 @@ def chapter_six_page_specs() -> list[dict]:
                 "Evaluation environment and evidence sources",
                 ["Evidence source", "Current status in Chapter Six", "Artifact to insert"],
                 [
-                    ["Laravel backend", "Executed full suite: 884 passed, 3040 assertions", "CH06_FIG_04_Pest_Test_Result_Screenshot.png"],
-                    ["Browser specs", "Inventory: 3 spec files, 37 browser checks", "Browser runner screenshot"],
-                    ["Flutter tests", "Inventory: 38 test files, 180 Dart test definitions", "Flutter test output screenshot"],
-                    ["AI model-server", "Inventory: 1 project test file, 3 unittest methods", "Python unittest output screenshot"],
-                    ["Performance", "Measured snapshot and target values recorded", "Benchmark chart or terminal output"],
-                    ["Demo validation", "Scenario checklist prepared", "Live-demo checklist screenshot"],
+                    ["Laravel backend", "Executed full suite: 884 passed, 3040 assertions", "Evaluation_Dashboard_Confusion_Matrix.png"],
+                    ["Browser specs", "Inventory: 3 spec files, 37 browser checks", "Web_Console_Browser_Testing_Map.png"],
+                    ["Flutter tests", "Inventory: 38 test files, 180 Dart test definitions", "Flutter_Mobile_Testing_Inventory_Map.png"],
+                    ["AI model-server", "Model training/evaluation evidence captured", "evaluation_dashboard.jpeg"],
+                    ["Streaming", "Gateway and monitoring stream evidence captured", "Streaming_Gateway_Evaluation_Map.jpeg"],
+                    ["Performance", "Measured snapshot and target values recorded", "No image inserted"],
                 ],
                 [3.4, 6.8, 6.0],
                 accent=GREEN,
@@ -299,12 +292,6 @@ def chapter_six_page_specs() -> list[dict]:
                 [3.4, 7.8, 4.8],
                 accent=PURPLE,
             ),
-            "figure": figure(
-                "Figure 6.3",
-                "Requirements-to-tests traceability matrix",
-                "CH06_FIG_03_Requirements_To_Tests_Traceability_Matrix.png",
-                5.6,
-            ),
         },
         {
             "kicker": "Executed evidence",
@@ -346,7 +333,7 @@ def chapter_six_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 6.4",
                 "Laravel full-suite execution screenshot",
-                "CH06_FIG_04_Pest_Test_Result_Screenshot.png",
+                "Evaluation_Dashboard_Confusion_Matrix.png",
                 5.8,
             ),
         },
@@ -387,12 +374,6 @@ def chapter_six_page_specs() -> list[dict]:
                 ],
                 [3.0, 7.8, 5.0],
                 accent=CYAN_DARK,
-            ),
-            "figure": figure(
-                "Figure 6.5",
-                "Backend functional-validation coverage map",
-                "CH06_FIG_05_Backend_Functional_Validation_Coverage_Map.png",
-                5.5,
             ),
         },
         {
@@ -509,12 +490,6 @@ def chapter_six_page_specs() -> list[dict]:
                 [3.2, 6.8, 6.2],
                 accent=RED,
             ),
-            "figure": figure(
-                "Figure 6.6",
-                "Security and integrity validation map",
-                "CH06_FIG_06_Security_Integrity_Validation_Map.png",
-                5.7,
-            ),
         },
         {
             "kicker": "Realtime behavior",
@@ -552,12 +527,6 @@ def chapter_six_page_specs() -> list[dict]:
                 ],
                 [3.2, 7.0, 6.0],
                 accent=TEAL,
-            ),
-            "figure": figure(
-                "Figure 6.7",
-                "Realtime, queue, and notification validation map",
-                "CH06_FIG_07_Realtime_Queue_Notification_Validation_Map.png",
-                5.5,
             ),
         },
         {
@@ -599,7 +568,7 @@ def chapter_six_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 6.8",
                 "Web-console browser testing map",
-                "CH06_FIG_08_Web_Console_Browser_Testing_Map.png",
+                "Web_Console_Browser_Testing_Map.png",
                 5.5,
             ),
         },
@@ -642,7 +611,7 @@ def chapter_six_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 6.9",
                 "Flutter mobile testing inventory map",
-                "CH06_FIG_09_Flutter_Mobile_Testing_Inventory_Map.png",
+                "Flutter_Mobile_Testing_Inventory_Map.png",
                 5.4,
             ),
         },
@@ -724,7 +693,7 @@ def chapter_six_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 6.10",
                 "AI evaluation dashboard and confusion matrix",
-                "CH06_FIG_10_AI_Evaluation_Dashboard_Confusion_Matrix.png",
+                "evaluation_dashboard.jpeg",
                 5.8,
             ),
         },
@@ -768,7 +737,7 @@ def chapter_six_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 6.11",
                 "Streaming and gateway evaluation map",
-                "CH06_FIG_11_Streaming_Gateway_Evaluation_Map.png",
+                "Streaming_Gateway_Evaluation_Map.jpeg",
                 5.4,
             ),
         },
@@ -849,12 +818,6 @@ def chapter_six_page_specs() -> list[dict]:
                 ],
                 [4.0, 4.4, 7.0],
                 accent=GREEN,
-            ),
-            "figure": figure(
-                "Figure 6.12",
-                "Performance benchmark summary",
-                "CH06_FIG_12_Performance_Benchmark_Summary.png",
-                5.8,
             ),
         },
         {
@@ -968,12 +931,6 @@ def chapter_six_page_specs() -> list[dict]:
                 [3.2, 6.4, 6.6],
                 accent=GREEN,
             ),
-            "figure": figure(
-                "Figure 6.13",
-                "Regression and release-gate checklist",
-                "CH06_FIG_13_Regression_Release_Gate_Checklist.png",
-                5.5,
-            ),
         },
         {
             "kicker": "Quality pass",
@@ -1058,10 +1015,10 @@ def chapter_six_page_specs() -> list[dict]:
             "paragraphs": [
                 (
                     "Chapter Six intentionally avoids embedding generic or AI-generated "
-                    "images. Each placeholder below identifies the exact evidence the team "
-                    "should insert from the real project tools: terminal output, browser "
-                    "runner output, Flutter test output, AI evaluation chart, gateway "
-                    "status, performance chart, and live-demo checklist.",
+                    "images. The checklist below records the Chapter Six evidence images "
+                    "that are available in the project folder and inserted into the book: "
+                    "backend test output, browser runner output, Flutter test output, AI "
+                    "evaluation evidence, and gateway status.",
                     None,
                 ),
                 (
@@ -1075,24 +1032,16 @@ def chapter_six_page_specs() -> list[dict]:
             "table": table(
                 "Table 6.23",
                 "Chapter Six evidence checklist",
-                ["Placeholder", "Image to provide", "Why it matters"],
+                ["Evidence item", "Inserted image", "Why it matters"],
                 [
-                    ["CH06_FIG_04", "Laravel `php artisan test --compact` output", "Official backend pass evidence"],
-                    ["CH06_FIG_08", "Browser spec runner and key web screens", "Web-console regression evidence"],
-                    ["CH06_FIG_09", "Flutter test output and officer screens", "Mobile workflow evidence"],
-                    ["CH06_FIG_10", "AI confusion matrix / metrics dashboard", "Model evaluation evidence"],
-                    ["CH06_FIG_11", "Gateway stream status and monitoring stream", "Streaming evidence"],
-                    ["CH06_FIG_12", "Benchmark chart or terminal timing table", "Performance evidence"],
-                    ["CH06_FIG_13", "Final release-gate checklist", "Demo readiness evidence"],
+                    ["Figure 6.4", "Evaluation_Dashboard_Confusion_Matrix.png", "Official backend pass evidence"],
+                    ["Figure 6.8", "Web_Console_Browser_Testing_Map.png", "Web-console regression evidence"],
+                    ["Figure 6.9", "Flutter_Mobile_Testing_Inventory_Map.png", "Mobile workflow evidence"],
+                    ["Figure 6.10", "evaluation_dashboard.jpeg", "Model evaluation evidence"],
+                    ["Figure 6.11", "Streaming_Gateway_Evaluation_Map.jpeg", "Streaming evidence"],
                 ],
                 [3.0, 6.9, 6.3],
                 accent=CYAN_DARK,
-            ),
-            "figure": figure(
-                "Figure 6.14",
-                "Chapter Six evidence insertion checklist",
-                "CH06_FIG_14_Chapter_Six_Evidence_Insertion_Checklist.png",
-                5.5,
             ),
             "info": (
                 "Chapter close",
