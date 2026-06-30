@@ -189,7 +189,7 @@ CHAPTER_TWO_FIGURES = [
     ("Figure 2.2", "Evolution of surveillance-video analysis methods", 30),
     ("Figure 2.3", "Contextual taxonomy of video anomalies", 31),
     ("Figure 2.4", "Supervision paradigms for video anomaly detection", 32),
-    ("Figure 2.5", "Spatial, temporal, object, and multimodal feature representations", 33),
+    ("Figure 2.5", "Spatial, temporal, and object feature representations", 33),
     ("Figure 2.6", "Literature-selection and evidence-synthesis workflow", 34),
     ("Figure 2.7", "Taxonomy of algorithm families reviewed in Chapter Two", 35),
     ("Figure 2.8", "Two-dimensional convolutional classification pipeline", 36),
@@ -203,13 +203,12 @@ CHAPTER_TWO_FIGURES = [
     ("Figure 2.16", "Robust temporal feature-magnitude learning", 44),
     ("Figure 2.17", "Object-detection and scene-evidence pipeline", 45),
     ("Figure 2.18", "Space-time attention for video understanding", 46),
-    ("Figure 2.19", "Audio-visual violence-detection architecture", 47),
     ("Figure 2.20", "Hybrid evidence-fusion strategies", 48),
     ("Figure 2.21", "Evaluation metrics and threshold behavior", 50),
     ("Figure 2.22", "Dataset landscape by realism, duration, and annotation level", 51),
     ("Figure 2.23", "UCF-Crime categories and weak labels", 52),
     ("Figure 2.24", "Representative compact anomaly-detection benchmarks", 53),
-    ("Figure 2.25", "RWF-2000 and XD-Violence dataset characteristics", 54),
+    ("Figure 2.25", "RWF-2000 violence dataset characteristics", 54),
     ("Figure 2.26", "Sources of cross-dataset domain shift", 55),
     ("Figure 2.27", "Chronological evolution of representative literature", 56),
     ("Figure 2.28", "Research-gap and opportunity map", 57),
@@ -435,31 +434,25 @@ CHAPTER_TWO_REFERENCES = [
     ),
     (
         "[19]",
-        'P. Wu et al., "Not only look, but also listen: Learning multimodal violence '
-        'detection under weak supervision," in Proc. European Conference on Computer '
-        "Vision (ECCV), 2020.",
-    ),
-    (
-        "[20]",
         'Y. Tian, G. Pang, Y. Chen, R. Singh, J. W. Verjans, and G. Carneiro, '
         '"Weakly-supervised video anomaly detection with robust temporal feature '
         'magnitude learning," in Proc. IEEE International Conference on Computer '
         "Vision (ICCV), 2021.",
     ),
     (
-        "[21]",
+        "[20]",
         'G. Bertasius, H. Wang, and L. Torresani, "Is space-time attention all you '
         'need for video understanding?" in Proc. International Conference on Machine '
         "Learning (ICML), 2021.",
     ),
     (
-        "[22]",
+        "[21]",
         'A. Arnab, M. Dehghani, G. Heigold, C. Sun, M. Lučić, and C. Schmid, '
         '"ViViT: A video vision transformer," in Proc. IEEE International Conference '
         "on Computer Vision (ICCV), 2021, pp. 6836–6846.",
     ),
     (
-        "[23]",
+        "[22]",
         'Y. Lu, M. K. K. Reddy, S. S. Nabavi, and Y. Wang, "Future frame prediction '
         'using convolutional VRNN for anomaly detection," in Proc. IEEE Winter '
         "Conference on Applications of Computer Vision (WACV), 2020.",
@@ -2836,8 +2829,8 @@ def chapter_two_page_specs() -> list[dict]:
                     "This chapter therefore examines the scientific methods that convert "
                     "video into evidence: spatial and temporal feature extraction, "
                     "convolutional and recurrent networks, reconstruction and prediction "
-                    "models, weak supervision, object detection, attention, transformers, "
-                    "and multimodal fusion. It also reviews datasets and evaluation "
+                    "models, weak supervision, object detection, attention, and "
+                    "transformers. It also reviews datasets and evaluation "
                     "metrics because reported performance is meaningful only when the "
                     "task definition, annotation level, test protocol, and operating "
                     "threshold are known. System requirements, actors, use cases, database "
@@ -2890,7 +2883,7 @@ def chapter_two_page_specs() -> list[dict]:
                     "The progression is not a simple replacement sequence: practical systems "
                     "still combine classical motion cues, convolutional features, temporal "
                     "models, object detectors, and decision rules.",
-                    "[11]–[15], [21], [22]",
+                    "[11]–[15], [20], [21]",
                 ),
             ],
             "figure": (
@@ -3010,10 +3003,8 @@ def chapter_two_page_specs() -> list[dict]:
                     "optical flow, trajectories, or learned temporal filters. Object-centric "
                     "representations describe detected people and items, their tracks, "
                     "poses, distances, and interactions. Scene representations encode zones, "
-                    "entry directions, density, time, and environmental context. Audio may "
-                    "add complementary evidence such as explosions, shouting, or impact "
-                    "sounds when a synchronized channel exists.",
-                    "[1], [15], [19]",
+                    "entry directions, density, time, and environmental context.",
+                    "[1], [15]",
                 ),
                 (
                     "Representation quality determines what a later classifier can learn. "
@@ -3022,8 +3013,7 @@ def chapter_two_page_specs() -> list[dict]:
                     "sensitive to camera movement and estimation cost. Object-centric "
                     "features are explainable but depend on detector and tracker reliability. "
                     "Spatiotemporal tensors preserve richer evidence but increase memory and "
-                    "computation. Multimodal features can disambiguate events, although "
-                    "missing or asynchronous channels introduce new failure modes.",
+                    "computation.",
                     None,
                 ),
             ],
@@ -3036,7 +3026,6 @@ def chapter_two_page_specs() -> list[dict]:
                     ["Motion", "Direction and movement", "Optical flow / temporal difference", "Noise and camera-motion sensitivity"],
                     ["Spatiotemporal volume", "Joint appearance and motion", "3D CNN / video transformer", "Compute and data demand"],
                     ["Object graph", "Entities and interactions", "Detection, tracking, relation model", "Error propagation"],
-                    ["Audio-visual", "Complementary event evidence", "Multimodal fusion", "Synchronization and missing channels"],
                 ],
                 "widths": [3.0, 3.7, 4.5, 5.0],
                 "accent": CYAN_DARK,
@@ -3044,7 +3033,7 @@ def chapter_two_page_specs() -> list[dict]:
             },
             "figure": (
                 "Figure 2.5",
-                "Spatial, temporal, object, and multimodal feature representations",
+                "Spatial, temporal, and object feature representations",
                 "CH02_FIG_05_Feature_Representations.png",
                 4.2,
             ),
@@ -3058,13 +3047,13 @@ def chapter_two_page_specs() -> list[dict]:
                     "chapter and summarizes research published primarily between 2020 and "
                     "2022. Its conclusions are supplemented with primary papers that "
                     "introduced influential datasets or methods, including UCF-Crime, "
-                    "RWF-2000, XD-Violence, temporal-regularity autoencoders, future-frame "
+                    "RWF-2000, temporal-regularity autoencoders, future-frame "
                     "prediction, three-dimensional convolution, two-stream networks, robust "
                     "temporal feature-magnitude learning, and video transformers. The review "
                     "prioritizes peer-reviewed or author-released primary sources and records "
                     "the task, dataset, metric, and supervision setting associated with each "
                     "reported result.",
-                    "[1], [2], [11]–[23]",
+                    "[1], [2], [11]–[22]",
                 ),
                 (
                     "Performance values are not transferred blindly across papers. A result "
@@ -3106,7 +3095,7 @@ def chapter_two_page_specs() -> list[dict]:
                     "ranking methods infer abnormal temporal segments from coarse labels. "
                     "Object detectors localize semantically meaningful items. Recurrent, "
                     "three-dimensional convolutional, and attention-based models capture "
-                    "temporal dependencies, while multimodal and hybrid systems combine "
+                    "temporal dependencies, while hybrid systems combine "
                     "several sources of evidence.",
                     "[1]",
                 ),
@@ -3302,7 +3291,7 @@ def chapter_two_page_specs() -> list[dict]:
                     "then models temporal order. Convolutional LSTM variants retain spatial "
                     "structure inside the recurrent state and are therefore useful for "
                     "frame prediction and motion-aware representation.",
-                    "[23]",
+                    "[22]",
                 ),
                 (
                     "Recurrent modeling can integrate evidence across a longer interval than "
@@ -3401,7 +3390,7 @@ def chapter_two_page_specs() -> list[dict]:
                     "choice remains operational: the prediction horizon must be long enough "
                     "to capture meaningful motion but short enough to preserve image quality "
                     "and low-latency detection.",
-                    "[23]",
+                    "[22]",
                 ),
             ],
             "figure": (
@@ -3512,7 +3501,7 @@ def chapter_two_page_specs() -> list[dict]:
                     "instances. Dilated temporal convolutions and self-attention capture "
                     "short- and long-range dependencies, while the learning objective "
                     "emphasizes hard examples.",
-                    "[20]",
+                    "[19]",
                 ),
                 (
                     "The method illustrates a broader trend in weakly supervised research: "
@@ -3521,9 +3510,9 @@ def chapter_two_page_specs() -> list[dict]:
                     "features must preserve temporal evidence; the loss must resist dominant "
                     "negative instances; and the evaluation must distinguish video-level "
                     "classification from frame-level localization. Reported improvements "
-                    "across UCF-Crime, ShanghaiTech, XD-Violence, and UCSD-Peds show the value "
+                    "across UCF-Crime, ShanghaiTech, and UCSD-Peds show the value "
                     "of designing the learning objective around weak-label noise.",
-                    "[20]",
+                    "[19]",
                 ),
             ],
             "figure": (
@@ -3593,7 +3582,7 @@ def chapter_two_page_specs() -> list[dict]:
                     "effective design. ViViT similarly represents video as spatiotemporal "
                     "tokens and studies factorized variants that reduce the cost of very long "
                     "token sequences.",
-                    "[21], [22]",
+                    "[20], [21]",
                 ),
                 (
                     "Transformers are attractive for surveillance because a significant "
@@ -3622,45 +3611,6 @@ def chapter_two_page_specs() -> list[dict]:
             ),
         },
         {
-            "kicker": "Complementary modalities",
-            "title": "Audio-Visual Violence Detection",
-            "paragraphs": [
-                (
-                    "Visual evidence can be ambiguous when the event is distant, occluded, "
-                    "dark, or outside the main region of interest. Audio may provide "
-                    "complementary evidence such as shouting, impact, glass breaking, or an "
-                    "explosion. XD-Violence was introduced with 4,754 untrimmed videos, a "
-                    "total duration of 217 hours, audio signals, multiple scenes, and weak "
-                    "video-level labels. Its associated method used parallel branches to "
-                    "model holistic, localized, and score relationships among snippets.",
-                    "[19]",
-                ),
-                (
-                    "Multimodal fusion can occur at input, feature, score, or decision level. "
-                    "Early fusion exposes the network to cross-modal interactions but assumes "
-                    "synchronization and available channels. Late fusion is modular and can "
-                    "handle different models, yet it may miss fine-grained alignment. Audio "
-                    "also introduces privacy, environmental noise, reverberation, and device "
-                    "variation. A silent violent event or an unrelated loud sound demonstrates "
-                    "why neither modality should be treated as unquestionable evidence.",
-                    None,
-                ),
-            ],
-            "figure": (
-                "Figure 2.19",
-                "Audio-visual violence-detection architecture",
-                "CH02_FIG_19_Audio_Visual_Fusion.png",
-                8.5,
-            ),
-            "info": (
-                "Modality caution",
-                "Multimodal evidence improves coverage only when synchronization, missing "
-                "channels, privacy, and modality-specific confidence are handled explicitly.",
-                GOLD,
-                "A/V",
-            ),
-        },
-        {
             "kicker": "Integrated inference",
             "title": "Hybrid Models and Evidence Fusion",
             "paragraphs": [
@@ -3670,7 +3620,7 @@ def chapter_two_page_specs() -> list[dict]:
                     "action model can describe motion; a recurrent or attention module can "
                     "aggregate time; and a rule or learned fusion layer can combine the "
                     "scores. Reconstruction error can be fused with discriminative "
-                    "probability, while audio can support uncertain visual evidence. The "
+                    "probability from a detector or action model. The "
                     "motivation is that no single representation captures object identity, "
                     "movement, interaction, context, and event duration equally well.",
                     "[1]",
@@ -3806,9 +3756,9 @@ def chapter_two_page_specs() -> list[dict]:
                     "that support frame- or pixel-level localization. ShanghaiTech contains "
                     "multiple campus scenes and greater environmental variation. UCF-Crime "
                     "contains long real-world surveillance videos and video-level labels for "
-                    "13 anomaly categories. RWF-2000 focuses on binary violence clips, while "
-                    "XD-Violence provides long multi-scene audio-visual videos.",
-                    "[1], [2], [18], [19]",
+                    "13 anomaly categories. RWF-2000 focuses on binary violence clips drawn "
+                    "from real surveillance footage.",
+                    "[1], [2], [18]",
                 ),
                 (
                     "A dataset is not simply a collection size. Staged versus real events, "
@@ -3830,7 +3780,6 @@ def chapter_two_page_specs() -> list[dict]:
                     ["ShanghaiTech", "13 campus scenes", "Frame anomaly", "Multi-scene generalization"],
                     ["UCF-Crime", "1,900 videos; about 128 hours", "Video labels; test temporal annotations", "Weakly supervised anomaly detection"],
                     ["RWF-2000", "2,000 real surveillance clips", "Violent / non-violent", "Binary violence recognition"],
-                    ["XD-Violence", "4,754 videos; 217 hours; audio", "Weak video labels", "Audio-visual violence detection"],
                 ],
                 "widths": [2.8, 4.7, 4.2, 4.5],
                 "accent": CYAN_DARK,
@@ -3924,8 +3873,8 @@ def chapter_two_page_specs() -> list[dict]:
             ),
         },
         {
-            "kicker": "Violence benchmarks",
-            "title": "RWF-2000 and XD-Violence",
+            "kicker": "Violence benchmark",
+            "title": "RWF-2000 Violence Benchmark",
             "paragraphs": [
                 (
                     "RWF-2000 contains 2,000 real-world surveillance clips divided between "
@@ -3937,25 +3886,17 @@ def chapter_two_page_specs() -> list[dict]:
                     "[18]",
                 ),
                 (
-                    "XD-Violence broadens the task through 4,754 untrimmed videos totaling "
-                    "217 hours, multiple scenes, audio, and weak labels. Its multimodal design "
-                    "allows research on complementary sound and visual evidence as well as "
-                    "online detection. The dataset is larger and more varied, but weak labels "
-                    "and heterogeneous sources create localization and domain challenges.",
-                    "[19]",
-                ),
-                (
-                    "The two datasets answer different questions. RWF-2000 supports a "
-                    "balanced clip-level violent/non-violent classification protocol, while "
-                    "XD-Violence examines weakly supervised localization and multimodal "
-                    "understanding in long videos. Their reported values must therefore not "
-                    "be placed in one ranking without preserving task and metric differences.",
+                    "RWF-2000 supports a balanced clip-level violent/non-violent "
+                    "classification protocol. Because its clips are short and trimmed, its "
+                    "reported values must not be compared directly with weakly supervised "
+                    "anomaly-localization results on long untrimmed videos such as UCF-Crime, "
+                    "where the task, label granularity, and metric definitions differ.",
                     None,
                 ),
             ],
             "figure": (
                 "Figure 2.25",
-                "RWF-2000 and XD-Violence dataset characteristics",
+                "RWF-2000 violence dataset characteristics",
                 "CH02_FIG_25_Violence_Datasets.png",
                 7.0,
             ),
@@ -4055,7 +3996,7 @@ def chapter_two_page_specs() -> list[dict]:
                     "The literature shows a transition from handcrafted motion descriptors "
                     "to learned spatial-temporal representations, from small fixed-scene "
                     "benchmarks to long real-world videos, and from frame reconstruction to "
-                    "weak supervision, attention, and multimodal reasoning. Despite this "
+                    "weak supervision and attention. Despite this "
                     "progress, the core problem remains open. Anomalies are contextual, "
                     "labeled events are scarce, performance is dataset dependent, and a model "
                     "score does not by itself establish operational meaning.",
@@ -4072,7 +4013,6 @@ def chapter_two_page_specs() -> list[dict]:
                     ["3D CNN / recurrent video models", "Captures temporal dynamics", "Data, compute, and window-length constraints"],
                     ["Object-centric detection", "Localized and interpretable evidence", "Intent and context remain unresolved"],
                     ["Transformers / attention", "Long-range relationships", "Scale, efficiency, and explanation limits"],
-                    ["Multimodal fusion", "Complementary evidence", "Privacy, synchronization, and missing modalities"],
                 ],
                 "widths": [4.0, 5.2, 7.0],
                 "accent": CYAN_DARK,

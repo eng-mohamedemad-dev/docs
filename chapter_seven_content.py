@@ -43,7 +43,6 @@ CHAPTER_SEVEN_TABLES = [
     ("Table 7.10", "Security and Governance Future Enhancements", 224),
     ("Table 7.11", "Productization and Deployment Future Enhancements", 225),
     ("Table 7.12", "Ethical and Societal Considerations", 226),
-    ("Table 7.13", "Final Defense Evidence Checklist", 227),
 ]
 
 
@@ -147,7 +146,7 @@ def chapter_seven_page_specs() -> list[dict]:
                     ["Objectives", "How the original goals were met", "Connects the ending to Chapter One"],
                     ["Contributions", "Technical, academic, and engineering additions", "Explains uniqueness"],
                     ["Lessons learned", "Agile, integration, testing, and teamwork insights", "Demonstrates engineering maturity"],
-                    ["Limitations", "Current boundaries without weakening the project", "Keeps the documentation honest"],
+                    ["Limitations", "Current boundaries without weakening the project", "Maintains academic credibility"],
                     ["Future work", "AI, scalability, security, deployment, and productization roadmap", "Shows continuity"],
                 ],
                 [3.2, 7.1, 5.9],
@@ -519,8 +518,8 @@ def chapter_seven_page_specs() -> list[dict]:
                     "Operational maturity also requires observability. Dashboards should "
                     "display queue wait times, failed jobs, camera health, stream status, "
                     "AI service heartbeat, API latency, database load, notification delivery, "
-                    "and storage usage. These indicators help the team move from demo "
-                    "confidence to operational confidence.",
+                    "and storage usage. These indicators help move the system from "
+                    "demonstration confidence to operational confidence.",
                     "[43]",
                 ),
             ],
@@ -681,7 +680,7 @@ def chapter_seven_page_specs() -> list[dict]:
         },
         {
             "kicker": "Final conclusion",
-            "title": "Final Conclusion and Defense Evidence",
+            "title": "Final Conclusion",
             "section": "7.6",
             "paragraphs": [
                 (
@@ -696,29 +695,12 @@ def chapter_seven_page_specs() -> list[dict]:
                 (
                     "The final defense should emphasize the complete project journey: "
                     "literature review, requirements, diagrams, architecture, implementation, "
-                    "testing, demo evidence, limitations, and future roadmap. If the team "
-                    "inserts the requested screenshots and diagrams into the designated "
-                    "placeholders, the final report will demonstrate both technical depth "
-                    "and presentation discipline.",
+                    "testing, demonstration evidence, limitations, and a future roadmap. "
+                    "Together these elements demonstrate both technical depth and "
+                    "engineering discipline.",
                     "[43]",
                 ),
             ],
-            "table": table(
-                "Table 7.13",
-                "Final Defense Evidence Checklist",
-                ["Placeholder", "Evidence to insert", "Defense value"],
-                [
-                    ["CH07_FIG_02", "Outcome/value map summary", "Opens the conclusion visually"],
-                    ["CH07_FIG_03", "Objectives-to-achievements diagram", "Shows that the goals were achieved"],
-                    ["CH07_FIG_07", "Future roadmap timeline", "Shows maturity and next steps"],
-                    ["CH07_FIG_08", "AI/data roadmap diagram", "Shows research continuity"],
-                    ["CH07_FIG_09", "Scalability/operations roadmap", "Shows production-oriented thinking"],
-                    ["CH07_FIG_10", "Security/governance roadmap", "Shows responsible design"],
-                    ["CH07_FIG_13", "Final defense checklist", "Shows project readiness"],
-                ],
-                [3.0, 7.0, 6.0],
-                accent=GREEN,
-            ),
             "figure": figure(
                 "Figure 7.13",
                 "Final Evidence and Defense Checklist",

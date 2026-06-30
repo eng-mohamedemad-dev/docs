@@ -16,11 +16,11 @@ ORANGE = "F59E0B"
 CHAPTER_SIX_FIGURES = [
     ("Figure 6.1", "Chapter-opening testing and evaluation background", 189),
     ("Figure 6.2", "Testing strategy and evidence pipeline", 190),
-    ("Figure 6.4", "Laravel full-suite execution screenshot", 194),
-    ("Figure 6.8", "Web-console browser testing map", 201),
-    ("Figure 6.9", "Flutter mobile testing inventory map", 202),
-    ("Figure 6.10", "AI evaluation dashboard and confusion matrix", 204),
-    ("Figure 6.11", "Streaming and gateway evaluation map", 206),
+    ("Figure 6.3", "Laravel full-suite execution screenshot", 194),
+    ("Figure 6.4", "Web-console browser testing map", 201),
+    ("Figure 6.5", "Flutter mobile testing inventory map", 202),
+    ("Figure 6.6", "AI evaluation dashboard and confusion matrix", 204),
+    ("Figure 6.7", "Streaming and gateway evaluation map", 206),
 ]
 
 
@@ -331,9 +331,9 @@ def chapter_six_page_specs() -> list[dict]:
                 accent=GREEN,
             ),
             "figure": figure(
-                "Figure 6.4",
+                "Figure 6.3",
                 "Laravel full-suite execution screenshot",
-                "Evaluation_Dashboard_Confusion_Matrix.png",
+                "Pest_Test_Result_Screenshot.png",
                 5.8,
             ),
         },
@@ -566,7 +566,7 @@ def chapter_six_page_specs() -> list[dict]:
                 accent=BLUE,
             ),
             "figure": figure(
-                "Figure 6.8",
+                "Figure 6.4",
                 "Web-console browser testing map",
                 "Web_Console_Browser_Testing_Map.png",
                 5.5,
@@ -609,7 +609,7 @@ def chapter_six_page_specs() -> list[dict]:
                 accent=GREEN,
             ),
             "figure": figure(
-                "Figure 6.9",
+                "Figure 6.5",
                 "Flutter mobile testing inventory map",
                 "Flutter_Mobile_Testing_Inventory_Map.png",
                 5.4,
@@ -691,7 +691,7 @@ def chapter_six_page_specs() -> list[dict]:
                 accent=GREEN,
             ),
             "figure": figure(
-                "Figure 6.10",
+                "Figure 6.6",
                 "AI evaluation dashboard and confusion matrix",
                 "evaluation_dashboard.jpeg",
                 5.8,
@@ -735,7 +735,7 @@ def chapter_six_page_specs() -> list[dict]:
                 accent=TEAL,
             ),
             "figure": figure(
-                "Figure 6.11",
+                "Figure 6.7",
                 "Streaming and gateway evaluation map",
                 "Streaming_Gateway_Evaluation_Map.jpeg",
                 5.4,
@@ -1034,11 +1034,11 @@ def chapter_six_page_specs() -> list[dict]:
                 "Chapter Six evidence checklist",
                 ["Evidence item", "Inserted image", "Why it matters"],
                 [
-                    ["Figure 6.4", "Evaluation_Dashboard_Confusion_Matrix.png", "Official backend pass evidence"],
-                    ["Figure 6.8", "Web_Console_Browser_Testing_Map.png", "Web-console regression evidence"],
-                    ["Figure 6.9", "Flutter_Mobile_Testing_Inventory_Map.png", "Mobile workflow evidence"],
-                    ["Figure 6.10", "evaluation_dashboard.jpeg", "Model evaluation evidence"],
-                    ["Figure 6.11", "Streaming_Gateway_Evaluation_Map.jpeg", "Streaming evidence"],
+                    ["Figure 6.3", "Pest_Test_Result_Screenshot.png", "Official backend pass evidence"],
+                    ["Figure 6.4", "Web_Console_Browser_Testing_Map.png", "Web-console regression evidence"],
+                    ["Figure 6.5", "Flutter_Mobile_Testing_Inventory_Map.png", "Mobile workflow evidence"],
+                    ["Figure 6.6", "evaluation_dashboard.jpeg", "Model evaluation evidence"],
+                    ["Figure 6.7", "Streaming_Gateway_Evaluation_Map.jpeg", "Streaming evidence"],
                 ],
                 [3.0, 6.9, 6.3],
                 accent=CYAN_DARK,
