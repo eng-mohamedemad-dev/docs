@@ -63,6 +63,8 @@ OUTPUT = HERE / "CrimeLens_Graduation_Book.docx"
 PRESENTATION_ASSETS = ROOT / "project" / "presentation" / "assets"
 BRANDING = PRESENTATION_ASSETS / "branding"
 TEAM_ASSETS = PRESENTATION_ASSETS / "team"
+POSTER_IMAGES = HERE.parent / "poster" / "images"
+BROCHURE_IMAGES = HERE.parent / "brochure" / "images"
 COVERS = HERE / "covers"
 CHAPTER_IMAGES = HERE / "chapter-images"
 
@@ -115,6 +117,47 @@ TEAM = [
     ("Ahmed Salama Ahmed", "220031", "QA & Testing", "team-220031.png"),
     ("Mohamed Ahmed Atia", "210270", "UI / UX Designer", "team-210270.png"),
 ]
+
+
+BRANDING_FALLBACKS = {
+    "university-logo.jpeg": ("logo-university.jpeg", "logo-university-clean.png"),
+    "faculty-logo.jpg": ("logo-faculty.jpg", "logo-faculty-clean.png"),
+    "crimelens-logo.png": ("logo-crimelens.png", "logo-keyed.png", "logo-crimelens2.png"),
+}
+
+
+def first_existing(*paths: Path) -> Path:
+    for path in paths:
+        if path.exists():
+            return path
+    return paths[0]
+
+
+def branding_asset(filename: str) -> Path:
+    candidates = [BRANDING / filename]
+    for fallback_name in BRANDING_FALLBACKS.get(filename, (filename,)):
+        candidates.extend([
+            POSTER_IMAGES / fallback_name,
+            BROCHURE_IMAGES / fallback_name,
+        ])
+    return first_existing(*candidates)
+
+
+def team_asset(filename: str) -> Path:
+    candidates = [
+        TEAM_ASSETS / filename,
+        POSTER_IMAGES / "team" / filename,
+        BROCHURE_IMAGES / "team" / filename,
+    ]
+    stem = Path(filename).stem
+    for extension in (".png", ".jpg", ".jpeg"):
+        alternate = f"{stem}{extension}"
+        candidates.extend([
+            TEAM_ASSETS / alternate,
+            POSTER_IMAGES / "team" / alternate,
+            BROCHURE_IMAGES / "team" / alternate,
+        ])
+    return first_existing(*candidates)
 
 
 FIGURES = [
@@ -1210,10 +1253,10 @@ def add_cover(document: Document) -> None:
         logos.cell(0, index).vertical_alignment = WD_CELL_VERTICAL_ALIGNMENT.CENTER
     lp = logos.cell(0, 0).paragraphs[0]
     lp.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    lp.add_run().add_picture(str(BRANDING / "university-logo.jpeg"), width=Cm(2.6))
+    lp.add_run().add_picture(str(branding_asset("university-logo.jpeg")), width=Cm(2.6))
     rp = logos.cell(0, 2).paragraphs[0]
     rp.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    rp.add_run().add_picture(str(BRANDING / "faculty-logo.jpg"), width=Cm(2.6))
+    rp.add_run().add_picture(str(branding_asset("faculty-logo.jpg")), width=Cm(2.6))
 
     p = cell.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -1236,7 +1279,7 @@ def add_cover(document: Document) -> None:
     emblem.alignment = WD_ALIGN_PARAGRAPH.CENTER
     emblem.paragraph_format.space_before = Pt(6)
     emblem.paragraph_format.space_after = Pt(2)
-    emblem.add_run().add_picture(str(BRANDING / "crimelens-logo.png"), width=Cm(3.4))
+    emblem.add_run().add_picture(str(branding_asset("crimelens-logo.png")), width=Cm(3.4))
 
     p = cell.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -1386,7 +1429,7 @@ def add_team_pages(document: Document) -> None:
         set_cell_margins(detail_cell, 140, 180, 140, 180)
         pp = photo_cell.paragraphs[0]
         pp.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        pp.add_run().add_picture(str(TEAM_ASSETS / member[3]), width=Cm(2.45), height=Cm(2.85))
+        pp.add_run().add_picture(str(team_asset(member[3])), width=Cm(2.45), height=Cm(2.85))
         dp = detail_cell.paragraphs[0]
         dp.alignment = WD_ALIGN_PARAGRAPH.LEFT
         name = dp.add_run(member[0] + "\n")
