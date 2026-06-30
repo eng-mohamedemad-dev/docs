@@ -4130,6 +4130,9 @@ def render_chapter_two_page(document: Document, spec: dict, *, is_last: bool) ->
             font_size=table_2.get("font_size", 8.0),
         )
 
+    for text, citation in spec.get("post_table_paragraphs", []):
+        add_body(document, text, citation=citation)
+
     code_snippet = spec.get("code")
     if code_snippet:
         add_code_block(document, code_snippet[0], code_snippet[1])
