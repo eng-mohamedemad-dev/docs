@@ -60,11 +60,16 @@ ROOT = Path(__file__).resolve().parents[2]
 HERE = Path(__file__).resolve().parent
 OUTPUT = HERE / "CrimeLens_Graduation_Book.docx"
 
-PRESENTATION_ASSETS = ROOT / "project" / "presentation" / "assets"
+PRESENTATION_ASSETS = HERE / "assets"
 BRANDING = PRESENTATION_ASSETS / "branding"
 TEAM_ASSETS = PRESENTATION_ASSETS / "team"
-POSTER_IMAGES = HERE.parent / "poster" / "images"
-BROCHURE_IMAGES = HERE.parent / "brochure" / "images"
+POSTER_IMAGES = PRESENTATION_ASSETS / "poster" / "images"
+BROCHURE_IMAGES = PRESENTATION_ASSETS / "brochure" / "images"
+LEGACY_PRESENTATION_ASSETS = ROOT / "project" / "presentation" / "assets"
+LEGACY_BRANDING = LEGACY_PRESENTATION_ASSETS / "branding"
+LEGACY_TEAM_ASSETS = LEGACY_PRESENTATION_ASSETS / "team"
+LEGACY_POSTER_IMAGES = HERE.parent / "poster" / "images"
+LEGACY_BROCHURE_IMAGES = HERE.parent / "brochure" / "images"
 COVERS = HERE / "covers"
 CHAPTER_IMAGES = HERE / "chapter-images"
 
@@ -134,11 +139,13 @@ def first_existing(*paths: Path) -> Path:
 
 
 def branding_asset(filename: str) -> Path:
-    candidates = [BRANDING / filename]
+    candidates = [BRANDING / filename, LEGACY_BRANDING / filename]
     for fallback_name in BRANDING_FALLBACKS.get(filename, (filename,)):
         candidates.extend([
             POSTER_IMAGES / fallback_name,
             BROCHURE_IMAGES / fallback_name,
+            LEGACY_POSTER_IMAGES / fallback_name,
+            LEGACY_BROCHURE_IMAGES / fallback_name,
         ])
     return first_existing(*candidates)
 
@@ -148,6 +155,9 @@ def team_asset(filename: str) -> Path:
         TEAM_ASSETS / filename,
         POSTER_IMAGES / "team" / filename,
         BROCHURE_IMAGES / "team" / filename,
+        LEGACY_TEAM_ASSETS / filename,
+        LEGACY_POSTER_IMAGES / "team" / filename,
+        LEGACY_BROCHURE_IMAGES / "team" / filename,
     ]
     stem = Path(filename).stem
     for extension in (".png", ".jpg", ".jpeg"):
@@ -156,6 +166,9 @@ def team_asset(filename: str) -> Path:
             TEAM_ASSETS / alternate,
             POSTER_IMAGES / "team" / alternate,
             BROCHURE_IMAGES / "team" / alternate,
+            LEGACY_TEAM_ASSETS / alternate,
+            LEGACY_POSTER_IMAGES / "team" / alternate,
+            LEGACY_BROCHURE_IMAGES / "team" / alternate,
         ])
     return first_existing(*candidates)
 
