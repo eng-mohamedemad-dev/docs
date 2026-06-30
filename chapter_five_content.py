@@ -31,7 +31,6 @@ CHAPTER_FIVE_FIGURES = [
     ("Figure 5.16", "Security implementation layers", 181),
     ("Figure 5.17", "Local development and demo runtime stack", 184),
     ("Figure 5.18", "Testing and quality evidence map", 185),
-    ("Figure 5.19", "Screenshot insertion checklist for Chapter Five", 187),
 ]
 
 
@@ -68,7 +67,6 @@ CHAPTER_FIVE_TABLES = [
     ("Table 5.30", "Development and demo commands", 184),
     ("Table 5.31", "Testing and quality implementation evidence", 185),
     ("Table 5.32", "Software-engineering practices applied", 186),
-    ("Table 5.33", "Chapter Five screenshot and evidence checklist", 187),
 ]
 
 
@@ -167,7 +165,7 @@ def chapter_five_page_specs() -> list[dict]:
                     ["Database", "Migrations, models, factories, seeders, enums, relationships", "Schema files and demo seeders"],
                     ["Web", "Admin and station consoles built with Inertia, React, TypeScript, Tailwind", "Entry points, pages, layouts, browser tests"],
                     ["Mobile", "Flutter officer workflows, API client, token storage, push, maps, media", "Dart code, features, pubspec, tests"],
-                    ["AI", "Flask model server, API client, inference services, camera manager", "Python code and model-server services"],
+                    ["AI", "Flask model server, API client, inference services, camera manager", "Python code under ai-model/.../model-server"],
                     ["Gateway", "Flask gateway, FFmpeg, MediaMTX, HLS/WebRTC, Tapo control", "Python gateway, scripts, configuration"],
                     ["Operations", "Queues, scheduler, Horizon, Telescope, Pail, setup commands", "Config files and scheduled providers"],
                 ],
@@ -243,7 +241,7 @@ def chapter_five_page_specs() -> list[dict]:
                     "behavior starts in the Camera module and gateway scripts; a developer "
                     "looking for dispatch logic starts in the Police module; a developer "
                     "working on mobile assignments starts in the Flutter application; and "
-                    "a developer working on model inference starts in the model-server.",
+                    "a developer working on model inference starts in the AI model folder.",
                     "[33], [35]",
                 ),
             ],
@@ -289,7 +287,7 @@ def chapter_five_page_specs() -> list[dict]:
                     "repeatability: Composer scripts for setup and development, Vite for "
                     "asset builds, Horizon for queue supervision, Telescope and Pail for "
                     "debugging, Pest and browser tests for backend/web behavior, Flutter "
-                    "tests for mobile behavior, and model-server tests for selected AI "
+                    "tests for mobile behavior, and AI model-server tests for selected AI "
                     "client behavior.",
                     "[33], [36]",
                 ),
@@ -302,7 +300,7 @@ def chapter_five_page_specs() -> list[dict]:
                     ["Backend", "PHP 8.4 target, Laravel 13, Sanctum, Horizon, Telescope", "composer.json, config, modules"],
                     ["Web frontend", "Inertia v3, React 19, TypeScript, Tailwind CSS v4, Vite", "package.json, admin.tsx, station.tsx"],
                     ["Mobile", "Flutter, BLoC/Cubit, Dio, Firebase Messaging, Pusher, maps, media packages", "pubspec.yaml, lib/features"],
-                    ["AI service", "Flask, OpenCV, NumPy, PyTorch/TensorFlow, Ultralytics, scikit-learn", "model-server requirements and services"],
+                    ["AI service", "Flask, OpenCV, NumPy, PyTorch/TensorFlow, Ultralytics, scikit-learn", "ai-model/.../model-server requirements and services"],
                     ["Gateway", "Flask, pytapo, FFmpeg, MediaMTX, HLS, WebRTC relay", "tapo_server.py and gateway scripts"],
                     ["Data/ops", "PostgreSQL/PostGIS, Redis, queues, scheduler, signed storage", "migrations, config, jobs, providers"],
                 ],
@@ -402,8 +400,8 @@ def chapter_five_page_specs() -> list[dict]:
         Route::post('heartbeat', [AiModelController::class, 'heartbeat']);
 
         Route::middleware(['verify.ai_signature'])->group(function () {
-            Route::post('alert', [AiModelController::class, 'alert']);
-            Route::post('crime', [AiModelController::class, 'crime']);
+            Route::post('alert', [AiModelController::class, 'alert'])
+                ->middleware('throttle:30,1');
         });
     });
 });""",
@@ -766,8 +764,8 @@ def chapter_five_page_specs() -> list[dict]:
             ),
             "info": (
                 "Engineering principle",
-                "A score that affects operations must be computed, stored, and explainable. "
-                "It should not exist only as a color or label on a screen.",
+                "A score that affects operations is computed, stored, and explainable. "
+                "It is not treated only as a color or label on a screen.",
                 CYAN_DARK,
                 "PRINCIPLE",
             ),
@@ -827,7 +825,8 @@ def chapter_five_page_specs() -> list[dict]:
                     "service location, BLoC/Cubit for several state flows, Firebase "
                     "Messaging and local notifications for push delivery, Pusher channels "
                     "for realtime communication, Google Maps and geolocation packages for "
-                    "field movement, and media packages for camera/video/audio features.",
+                    "field movement, and media packages for camera, video, and voice-message "
+                    "features.",
                     "[33]",
                 ),
             ],
@@ -946,8 +945,8 @@ final token = await authTokenStorage.readToken();""",
                     "At startup, it loads model artifacts, authenticates with the Laravel "
                     "backend, retrieves the per-session encryption key, fetches assigned "
                     "cameras, decrypts stream material, starts camera-processing threads, "
-                    "sends heartbeats, refreshes cameras periodically, and reports alerts "
-                    "or confirmed crimes.",
+                    "sends heartbeats, refreshes cameras periodically, and reports signed "
+                    "alerts to the backend.",
                     "[33]",
                 ),
                 (
@@ -1297,7 +1296,7 @@ return $client->withHeader('X-Gateway-Token', $secret);""",
                 (
                     "The station user model and Spatie permission tables support individual "
                     "dispatcher permissions. This matters because a station account can be "
-                    "institutional, but dispatch decisions should still be traceable to a "
+                    "institutional, while dispatch decisions remain traceable to a "
                     "permissioned operator where individual users are used.",
                     "[33]",
                 ),
@@ -1370,7 +1369,7 @@ return $client->withHeader('X-Gateway-Token', $secret);""",
                 (
                     "Configuration is implemented through Laravel config files, environment "
                     "variables, module config files, Python gateway environment variables, "
-                    "model-server configuration, and Flutter application configuration. This "
+                    "AI model-server configuration, and Flutter application configuration. This "
                     "keeps credentials, hostnames, ports, timeouts, queue drivers, broadcast "
                     "keys, and external-service tokens outside source logic.",
                     "[33]",
@@ -1394,7 +1393,7 @@ return $client->withHeader('X-Gateway-Token', $secret);""",
                     ["Queues", "config/queue.php, config/horizon.php", "Redis queues and supervisors"],
                     ["Broadcasting", "config/broadcasting.php and Pusher env vars", "Realtime web delivery"],
                     ["Camera gateway", "services.camera_gateway and gateway env vars", "Gateway base URL, shared secret, timeouts"],
-                    ["AI model", "model-server config.py and .env", "Backend URL, model credentials, thresholds"],
+                    ["AI model", "ai-model/.../model-server config.py and .env", "Backend URL, model credentials, thresholds"],
                     ["Flutter", "app_config.dart, firebase_options.dart, pubspec.yaml", "API base, Firebase, assets, packages"],
                 ],
                 [3.4, 6.8, 6.0],
@@ -1432,7 +1431,7 @@ return $client->withHeader('X-Gateway-Token', $secret);""",
                     ["composer run dev", "Serve, queue listener, Pail, Vite, scheduler, gateway boot", "Integrated local development"],
                     ["php artisan horizon", "Horizon queue workers", "Queue processing and monitoring"],
                     ["python Modules/Gateway/tapo_server.py", "Gateway Flask service", "Camera streaming/control"],
-                    ["python model-server/main.py", "AI model orchestrator", "Inference and AI reports"],
+                    ["python ai-model/.../model-server/main.py", "AI model orchestrator", "Inference and alert reports"],
                     ["npm run build", "Vite production build", "Web assets"],
                 ],
                 [4.4, 7.0, 4.8],
@@ -1453,9 +1452,9 @@ return $client->withHeader('X-Gateway-Token', $secret);""",
                 (
                     "Testing is implemented across Laravel, browser, Flutter, and AI client "
                     "areas. The repository contains feature tests, unit tests, browser tests, "
-                    "module-specific tests, Flutter tests, and model-server tests. The count "
-                    "should be presented as discovered inventory unless a final full-suite "
-                    "run is recorded in the target environment.",
+                    "module-specific tests, Flutter tests, and AI model-server tests. Test counts "
+                    "are treated as repository inventory unless a final full-suite run is "
+                    "recorded in the target environment.",
                     "[33], [36]",
                 ),
                 (
@@ -1503,8 +1502,8 @@ return $client->withHeader('X-Gateway-Token', $secret);""",
                     "[33], [35]",
                 ),
                 (
-                    "The most important engineering habit is traceability. A feature should "
-                    "be traceable from requirement to route, controller, service, model state, "
+                    "The most important engineering habit is traceability. A feature remains "
+                    "traceable from requirement to route, controller, service, model state, "
                     "event/job, interface, and test or demo evidence. This is the difference "
                     "between a graduation demo that merely appears to work and a system that "
                     "can be explained, reviewed, and improved.",
@@ -1526,58 +1525,6 @@ return $client->withHeader('X-Gateway-Token', $secret);""",
                 ],
                 [3.6, 7.3, 5.3],
                 accent=PURPLE,
-            ),
-        },
-        {
-            "kicker": "Evidence insertion",
-            "title": "Screenshots and Implementation Evidence to Add Later",
-            "paragraphs": [
-                (
-                    "The Word file intentionally contains placeholders instead of inserted "
-                    "screenshots. Screenshots should be added only when they prove an "
-                    "implemented capability. For Chapter Five, the most useful images are "
-                    "not generic UI shots; they are evidence of working implementation "
-                    "slices: route-to-screen behavior, dispatcher monitoring, mobile field "
-                    "actions, AI model dashboard, gateway status, Horizon queues, and test "
-                    "runs.",
-                    None,
-                ),
-                (
-                    "When inserting screenshots, crop the image to the relevant area, remove "
-                    "private credentials, keep text readable on A4, and prefer one clear "
-                    "workflow per figure. If a screen contains sensitive or noisy data, use "
-                    "demo seed data rather than real personal information.",
-                    None,
-                ),
-            ],
-            "table": table(
-                "Table 5.33",
-                "Chapter Five screenshot and evidence checklist",
-                ["Placeholder", "Image to provide", "Purpose"],
-                [
-                    ["CH05_FIG_08", "Admin console screenshot", "Governance and management evidence"],
-                    ["CH05_FIG_09", "Dispatcher monitoring/incident screenshot", "Station operational evidence"],
-                    ["CH05_FIG_11", "Officer mobile assignment/status screenshot", "Field workflow evidence"],
-                    ["CH05_FIG_12", "AI model dashboard/runtime screenshot", "Inference runtime evidence"],
-                    ["CH05_FIG_13", "Gateway stream/status screenshot", "Streaming implementation evidence"],
-                    ["CH05_FIG_15", "Horizon queues/supervisors screenshot", "Background work evidence"],
-                    ["CH05_FIG_18", "Test result or testing map screenshot", "Quality evidence"],
-                ],
-                [3.2, 6.2, 6.8],
-                accent=CYAN_DARK,
-            ),
-            "figure": figure(
-                "Figure 5.19",
-                "Screenshot insertion checklist for Chapter Five",
-                "CH05_FIG_19_Screenshot_Insertion_Checklist.png",
-                5.6,
-            ),
-            "info": (
-                "Chapter close",
-                "Chapter Five documents the implemented system. Chapter Six should evaluate "
-                "it through tests, validation, measured results, and performance evidence.",
-                GREEN,
-                "NEXT",
             ),
         },
     ]
