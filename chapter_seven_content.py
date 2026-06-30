@@ -22,11 +22,11 @@ CHAPTER_SEVEN_FIGURES = [
     ("Figure 7.6", "Limitations-to-Roadmap Transition Map", 219),
     ("Figure 7.7", "Future Roadmap Timeline", 220),
     ("Figure 7.8", "AI and Data Improvement Roadmap", 221),
-    ("Figure 7.9", "Scalability and Operations Roadmap", 222),
-    ("Figure 7.10", "Security, Governance, and Compliance Roadmap", 223),
-    ("Figure 7.11", "Productization and Deployment Roadmap", 224),
-    ("Figure 7.12", "Ethical and Societal Impact Map", 225),
-    ("Figure 7.13", "Final Evidence and Defense Checklist", 226),
+    ("Figure 7.9", "Scalability and Operations Roadmap", 223),
+    ("Figure 7.10", "Security, Governance, and Compliance Roadmap", 224),
+    ("Figure 7.11", "Productization and Deployment Roadmap", 225),
+    ("Figure 7.12", "Ethical and Societal Impact Map", 226),
+    ("Figure 7.13", "Final Evidence and Defense Checklist", 227),
 ]
 
 
@@ -38,11 +38,12 @@ CHAPTER_SEVEN_TABLES = [
     ("Table 7.5", "Current Limitations and Responsible Interpretation", 219),
     ("Table 7.6", "Future Roadmap Overview", 220),
     ("Table 7.7", "AI and Data Future Enhancements", 221),
-    ("Table 7.8", "Scalability and Operational Future Enhancements", 222),
-    ("Table 7.9", "Security and Governance Future Enhancements", 223),
-    ("Table 7.10", "Productization and Deployment Future Enhancements", 224),
-    ("Table 7.11", "Ethical and Societal Considerations", 225),
-    ("Table 7.12", "Final Defense Evidence Checklist", 226),
+    ("Table 7.8", "AI Audio and Wanted-Person Matching Features", 222),
+    ("Table 7.9", "Scalability and Operational Future Enhancements", 223),
+    ("Table 7.10", "Security and Governance Future Enhancements", 224),
+    ("Table 7.11", "Productization and Deployment Future Enhancements", 225),
+    ("Table 7.12", "Ethical and Societal Considerations", 226),
+    ("Table 7.13", "Final Defense Evidence Checklist", 227),
 ]
 
 
@@ -433,6 +434,75 @@ def chapter_seven_page_specs() -> list[dict]:
             ),
         },
         {
+            "kicker": "AI evidence extensions",
+            "title": "AI Audio Analysis and Wanted-Person Matching Support",
+            "paragraphs": [
+                (
+                    "CrimeLens can be extended with two additional AI-assisted evidence "
+                    "modules: audio-based incident detection and wanted-person visual "
+                    "matching. These modules are designed to support the dispatcher with "
+                    "additional evidence, not to replace human judgment or make final "
+                    "enforcement decisions automatically.",
+                    "[43], [46]",
+                ),
+                (
+                    "The audio analysis module focuses on detecting suspicious sound patterns "
+                    "and abusive or profane speech indicators within monitored areas. When "
+                    "the system identifies aggressive language, shouting, abnormal noise "
+                    "levels, or other configured audio signals, it creates an audio-based "
+                    "alert containing the camera or microphone source, timestamp, detected "
+                    "category, confidence score, and related evidence snippet. This alert is "
+                    "then sent to the dispatcher for review before any operational action is "
+                    "taken.",
+                    "[43], [46]",
+                ),
+                (
+                    "The wanted-person matching module compares live camera frames with "
+                    "reference images of wanted or person-of-interest records stored in the "
+                    "database. During live monitoring, the system extracts visual features "
+                    "from detected faces and compares them with stored reference profiles. "
+                    "If the similarity score exceeds a predefined threshold, the system "
+                    "generates a potential wanted-person match alert. The alert includes "
+                    "the matched record reference, camera location, timestamp, confidence "
+                    "score, and captured evidence frame.",
+                    "[43], [46], [47]",
+                ),
+                (
+                    "CrimeLens does not declare a person guilty or automatically classify "
+                    "someone as a criminal. Instead, it presents a possible match that must "
+                    "be verified by an authorized human dispatcher. This design keeps the "
+                    "system aligned with the project’s core principle: AI provides evidence, "
+                    "humans make the final decision, and the backend records accountable "
+                    "actions.",
+                    "[43], [46], [47]",
+                ),
+            ],
+            "table": table(
+                "Table 7.8",
+                "AI Audio and Wanted-Person Matching Features",
+                ["Feature", "Input Source", "AI Output", "Human Role", "Stored Evidence"],
+                [
+                    ["Audio profanity and aggression detection", "Live audio stream or microphone input", "Suspicious audio/profanity alert with confidence score", "Dispatcher reviews and confirms relevance", "Timestamp, source, category, confidence, audio snippet"],
+                    ["Wanted-person visual matching", "Live camera stream and database reference images", "Potential wanted-person match", "Dispatcher verifies the match before escalation", "Camera frame, matched record ID, confidence, location, timestamp"],
+                    ["Alert prioritization", "AI result, confidence score, and context", "Suggested priority level", "Dispatcher accepts, modifies, or rejects priority", "Priority factors and decision record"],
+                    ["Audit trail", "Dispatcher actions and system-generated alerts", "Traceable decision history", "Supervisor or admin can review actions", "Activity logs and decision ledger"],
+                ],
+                [3.0, 3.5, 3.4, 3.2, 3.9],
+                accent=PURPLE,
+                font_size=7.7,
+            ),
+            "post_table_paragraphs": [
+                (
+                    "This approach improves situational awareness while preserving "
+                    "accountability, privacy, and human supervision. It also reduces the "
+                    "risk of blind automation by ensuring that AI-generated audio or visual "
+                    "alerts are treated as reviewable evidence rather than final operational "
+                    "conclusions.",
+                    "[43], [46], [47]",
+                ),
+            ],
+        },
+        {
             "kicker": "Scale and operations",
             "title": "Scalability and Operational Future Enhancements",
             "paragraphs": [
@@ -455,7 +525,7 @@ def chapter_seven_page_specs() -> list[dict]:
                 ),
             ],
             "table": table(
-                "Table 7.8",
+                "Table 7.9",
                 "Scalability and Operational Future Enhancements",
                 ["Area", "Future enhancement", "Operational value"],
                 [
@@ -499,7 +569,7 @@ def chapter_seven_page_specs() -> list[dict]:
                 ),
             ],
             "table": table(
-                "Table 7.9",
+                "Table 7.10",
                 "Security and Governance Future Enhancements",
                 ["Governance area", "Future work", "Reason"],
                 [
@@ -543,7 +613,7 @@ def chapter_seven_page_specs() -> list[dict]:
                 ),
             ],
             "table": table(
-                "Table 7.10",
+                "Table 7.11",
                 "Productization and Deployment Future Enhancements",
                 ["Enhancement", "Description", "Impact"],
                 [
@@ -588,7 +658,7 @@ def chapter_seven_page_specs() -> list[dict]:
                 ),
             ],
             "table": table(
-                "Table 7.11",
+                "Table 7.12",
                 "Ethical and Societal Considerations",
                 ["Consideration", "CrimeLens design response", "Future strengthening"],
                 [
@@ -634,7 +704,7 @@ def chapter_seven_page_specs() -> list[dict]:
                 ),
             ],
             "table": table(
-                "Table 7.12",
+                "Table 7.13",
                 "Final Defense Evidence Checklist",
                 ["Placeholder", "Evidence to insert", "Defense value"],
                 [
