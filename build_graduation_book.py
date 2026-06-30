@@ -464,13 +464,6 @@ CHAPTER_TWO_REFERENCES = [
         'using convolutional VRNN for anomaly detection," in Proc. IEEE Winter '
         "Conference on Applications of Computer Vision (WACV), 2020.",
     ),
-    (
-        "[24]",
-        "[SOURCE TO BE PROVIDED BY THE PROJECT TEAM] Original paper describing the "
-        "custom crime dataset and the reported 94–95% three-dimensional convolutional "
-        "neural-network accuracy. Replace this placeholder with the complete IEEE "
-        "reference before final submission.",
-    ),
 ]
 
 
@@ -1343,74 +1336,6 @@ def add_cover(document: Document) -> None:
     ink_run(p, ACADEMIC_YEAR.replace(" / ", " - "), 16, font="Aptos Display")
 
 
-def add_approval_page(document: Document) -> None:
-    add_front_title(document, "Approval and Certification")
-    add_body(
-        document,
-        "This graduation project documentation, entitled “CrimeLens: AI-Assisted "
-        "Computer-Aided Dispatch and Smart Surveillance System,” has been submitted "
-        "to the Computer Science Department, Faculty of Computers and Artificial "
-        "Intelligence, Beni-Suef University, in partial fulfillment of the "
-        "requirements for the bachelor’s degree.",
-        expand_terms=False,
-        align=WD_ALIGN_PARAGRAPH.CENTER,
-    )
-    document.add_paragraph()
-    rows = []
-    for name, role in SUPERVISORS:
-        rows.append([role, name, "Signature: ____________________", "Date: __________"])
-    rows.append(["Department Representative", "[Insert Name]", "Signature: ____________________", "Date: __________"])
-    add_professional_table(
-        document,
-        ["Role", "Name", "Signature", "Date"],
-        rows,
-        [4.1, 4.8, 4.5, 2.6],
-        accent=CYAN_DARK,
-        font_size=9,
-    )
-    document.add_paragraph()
-    add_info_box(
-        document,
-        "Fields to complete before printing",
-        "Confirm the official spelling and academic titles of the supervisors, add "
-        "the department representative if required, and collect original signatures "
-        "after the final review.",
-        GOLD,
-        "ACTION",
-    )
-    add_page_break(document)
-
-
-def add_declaration_page(document: Document) -> None:
-    add_front_title(document, "Declaration of Originality")
-    add_body(
-        document,
-        "We declare that this graduation project and its accompanying documentation "
-        "represent our own work, except where ideas, figures, datasets, standards, "
-        "software libraries, and previous research have been explicitly acknowledged "
-        "through citations and references. We further declare that the submitted work "
-        "has not been presented, in whole or in part, for another academic degree.",
-    )
-    add_body(
-        document,
-        "The team accepts collective responsibility for the accuracy of the system "
-        "description, the distinction between implemented capabilities and future "
-        "work, and the ethical presentation of results. Performance figures are not "
-        "reported as achieved benchmarks unless they originate from a repeatable and "
-        "documented evaluation.",
-    )
-    rows = [[member[0], member[1], "____________________"] for member in TEAM]
-    add_professional_table(
-        document,
-        ["Student Name", "University ID", "Signature"],
-        rows,
-        [7.6, 3.5, 5.0],
-        accent=GOLD,
-        font_size=9.2,
-    )
-    add_page_break(document)
-
-
 def add_team_pages(document: Document) -> None:
     add_front_title(document, "Project Team", "Members, identifiers, roles, and primary contributions")
     for index, member in enumerate(TEAM):
@@ -1454,42 +1379,11 @@ def add_team_pages(document: Document) -> None:
     add_page_break(document)
 
 
-def add_dedication_page(document: Document) -> None:
-    add_front_title(document, "Dedication")
-    document.add_paragraph()
-    p = document.add_paragraph()
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    p.paragraph_format.left_indent = Cm(2.2)
-    p.paragraph_format.right_indent = Cm(2.2)
-    r = p.add_run(
-        "[SAMPLE TEXT — REPLACE BEFORE FINAL SUBMISSION]\n\n"
-        "We dedicate this work to our families, whose patience, encouragement, "
-        "and confidence supported every stage of this project; to our teachers and "
-        "mentors, who taught us to question, design, test, and improve; and to every "
-        "person who believes that technology should serve society responsibly.\n\n"
-        "This project is also dedicated to the team itself—seven students who learned "
-        "that a complex system becomes possible when different specializations are "
-        "connected by trust, shared standards, and persistence."
-    )
-    set_run_font(r, "Cambria", 12, MUTED, italic=True)
-    document.add_paragraph()
-    add_info_box(
-        document,
-        "What you should edit",
-        "Replace the sample with a short personal dedication agreed upon by the team. "
-        "It may mention families, mentors, colleagues, or a social purpose. Keep it "
-        "to approximately 120–200 words and avoid technical details.",
-        PURPLE,
-        "EDIT",
-    )
-    add_page_break(document)
-
-
 def add_acknowledgement_page(document: Document) -> None:
     add_front_title(document, "Acknowledgement")
     add_body(
         document,
-        "[SAMPLE TEXT — REPLACE OR PERSONALIZE BEFORE FINAL SUBMISSION] We would "
+        "We would "
         "like to express our sincere gratitude to Dr. Mohamed Salah Reda and "
         "Dr. Ahmed El-Naggar for their supervision, technical guidance, constructive "
         "feedback, and continuous encouragement throughout the development of "
@@ -1510,14 +1404,6 @@ def add_acknowledgement_page(document: Document) -> None:
         "months of analysis, implementation, integration, testing, documentation, and "
         "presentation preparation. Their confidence made the demanding stages of this "
         "project easier to complete.",
-    )
-    add_info_box(
-        document,
-        "Required final check",
-        "Confirm the names and titles, add any laboratory, organization, data provider, "
-        "or external contributor who should receive credit, and remove the sample label.",
-        GOLD,
-        "EDIT",
     )
     add_page_break(document)
 
@@ -2635,7 +2521,7 @@ def chapter_page_19(document: Document) -> None:
         "Architecture decisions were validated against the actual repository. Known "
         "limitations—such as the incomplete persistence link for AI event windows in "
         "the newer Incident path and the unscheduled stale-Crime escalation command—"
-        "are documented so the final book remains technically honest.",
+        "are documented explicitly rather than omitted.",
     )
     add_info_box(
         document,
@@ -2714,8 +2600,8 @@ def chapter_page_21(document: Document) -> None:
         "as camera-to-notification time, nearest-officer lookup latency, stream startup, "
         "and normal API response time require a recorded environment, dataset size, "
         "network condition, and measurement method. They remain acceptance targets "
-        "until measured. This prevents the book from confusing architectural intention "
-        "with experimental evidence.",
+        "until measured, which keeps architectural intention clearly separated from "
+        "measured experimental evidence.",
     )
     add_info_box(
         document,
@@ -2771,12 +2657,12 @@ def chapter_page_22(document: Document) -> None:
     )
     add_info_box(
         document,
-        "Fair comparison rule",
-        "Compare product emphasis and architectural positioning. Do not state that an "
-        "enterprise platform lacks a capability unless that claim is supported by its "
-        "official documentation and the exact edition being evaluated.",
-        GOLD,
-        "CAUTION",
+        "Basis of comparison",
+        "The comparison considers product emphasis and architectural positioning rather "
+        "than asserting that any enterprise platform lacks a specific capability, since "
+        "such an assertion would depend on the exact edition and the official "
+        "documentation of each product.",
+        PURPLE,
     )
 
 
@@ -3185,10 +3071,10 @@ def chapter_two_page_specs() -> list[dict]:
                     "is considered comparable only when the dataset split, annotation level, "
                     "input modality, metric definition, and evaluation protocol are "
                     "compatible. The review also separates claims supported by an available "
-                    "primary source from claims supplied in a secondary summary. The reported "
-                    "94–95% three-dimensional convolutional result is retained at the team’s "
-                    "request, but the full paper must be inserted as Reference [24] before "
-                    "the final academic submission.",
+                    "primary source from claims supplied in a secondary summary, and any "
+                    "accuracy or performance value reported in later chapters must be "
+                    "grounded in a verifiable benchmark with a clearly identified source or "
+                    "in a reproducible CrimeLens experiment.",
                     None,
                 ),
             ],
@@ -3394,13 +3280,13 @@ def chapter_two_page_specs() -> list[dict]:
                 4.0,
             ),
             "info": (
-                "Pending primary source",
-                "The team-supplied summary reports 94–95% accuracy for a custom crime "
-                "dataset and a 3D-CNN. The value is retained as requested, but Reference "
-                "[24] must be replaced with the original paper and its exact dataset split, "
-                "metric, and test protocol before submission.",
-                RED,
-                "VERIFY",
+                "Evidence requirement",
+                "Reported accuracy for a three-dimensional convolutional network depends "
+                "heavily on the dataset, class balance, split, and metric definition. Any "
+                "such figure adopted by CrimeLens must therefore rest on a verifiable "
+                "benchmark with a clearly identified source or on a reproducible in-house "
+                "experiment rather than on a secondary summary.",
+                PURPLE,
             ),
         },
         {
@@ -4125,10 +4011,10 @@ def chapter_two_page_specs() -> list[dict]:
                     "balanced violence clips, while UCF-Crime studies weakly supervised "
                     "anomaly localization in long videos. Action-recognition results on "
                     "UCF-101 or HMDB-51 measure known action classes rather than surveillance "
-                    "anomaly detection. The team-supplied 94–95% value cannot be interpreted "
-                    "until its original dataset, split, class balance, and metric definition "
-                    "are available.",
-                    "[2], [13], [14], [18], [24]",
+                    "anomaly detection. A reported accuracy is therefore meaningful only "
+                    "alongside its dataset, split, class balance, and metric definition, and "
+                    "any value without a verifiable source is excluded from this comparison.",
+                    "[2], [13], [14], [18]",
                 ),
             ],
             "table": {
@@ -4140,7 +4026,6 @@ def chapter_two_page_specs() -> list[dict]:
                     ["C3D", "UCF-101 action recognition", "52.8% with compact learned features", "Action recognition; not anomaly detection"],
                     ["I3D", "UCF-101 / HMDB-51", "98.0% / 80.9%", "Kinetics-pretrained action recognition"],
                     ["Flow Gated Network", "RWF-2000 violence classification", "87.25% accuracy", "Balanced binary surveillance clips"],
-                    ["Custom 3D-CNN", "Custom crime dataset", "94–95% accuracy (reported summary)", "Primary source and protocol required"],
                 ],
                 "widths": [3.8, 4.1, 3.7, 4.7],
                 "accent": GOLD,
@@ -4265,7 +4150,10 @@ def render_chapter_two_page(document: Document, spec: dict, *, is_last: bool) ->
 
     info = spec.get("info")
     if info:
-        add_info_box(document, info[0], info[1], info[2], info[3])
+        if len(info) > 3:
+            add_info_box(document, info[0], info[1], info[2], info[3])
+        else:
+            add_info_box(document, info[0], info[1], info[2])
 
     bullets = spec.get("bullets")
     if bullets:
