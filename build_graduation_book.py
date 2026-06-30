@@ -1023,10 +1023,14 @@ def add_info_box(document: Document, title: str, body: str,
 
 
 def find_chapter_image(filename: str) -> Path | None:
-    """Locate a real figure image by filename anywhere under chapter-images/."""
+    """Locate a real figure image under chapter-images/."""
     if not CHAPTER_IMAGES.exists():
         return None
-    matches = list(CHAPTER_IMAGES.rglob(filename))
+    requested = Path(filename)
+    direct = CHAPTER_IMAGES / requested
+    if direct.exists():
+        return direct
+    matches = list(CHAPTER_IMAGES.rglob(requested.name))
     return matches[0] if matches else None
 
 

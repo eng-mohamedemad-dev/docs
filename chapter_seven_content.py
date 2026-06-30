@@ -155,7 +155,7 @@ def chapter_seven_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 7.2",
                 "CrimeLens outcome and value map",
-                "CH07_FIG_02_CrimeLens_Outcome_Value_Map.png",
+                "chapter7/CH07_FIG_02_CrimeLens_Outcome_Value_Map.png",
                 5.4,
             ),
         },
@@ -201,7 +201,7 @@ def chapter_seven_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 7.3",
                 "Objectives-to-Achievements Matrix",
-                "CH07_FIG_03_Objectives_To_Achievements_Matrix.png",
+                "chapter7/CH07_FIG_03_Objectives_To_Achievements_Matrix.png",
                 5.5,
             ),
         },
@@ -248,7 +248,7 @@ def chapter_seven_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 7.4",
                 "Technical Contribution Summary Map",
-                "CH07_FIG_04_Technical_Contribution_Summary_Map.png",
+                "chapter7/CH07_FIG_04_Technical_Contribution_Summary_Map.png",
                 5.4,
             ),
         },
@@ -294,7 +294,7 @@ def chapter_seven_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 7.5",
                 "Software Engineering Lessons Learned",
-                "CH07_FIG_05_Software_Engineering_Lessons_Learned.png",
+                "chapter7/CH07_FIG_05_Software_Engineering_Lessons_Learned.png",
                 5.4,
             ),
         },
@@ -340,7 +340,7 @@ def chapter_seven_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 7.6",
                 "Limitations-to-Roadmap Transition Map",
-                "CH07_FIG_06_Limitations_To_Roadmap_Transition_Map.png",
+                "chapter7/CH07_FIG_06_Limitations_To_Roadmap_Transition_Map.png",
                 5.5,
             ),
         },
@@ -385,7 +385,7 @@ def chapter_seven_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 7.7",
                 "Future Roadmap Timeline",
-                "CH07_FIG_07_Future_Roadmap_Timeline.png",
+                "chapter7/CH07_FIG_07_Future_Roadmap_Timeline.png",
                 5.5,
             ),
         },
@@ -428,7 +428,7 @@ def chapter_seven_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 7.8",
                 "AI and Data Improvement Roadmap",
-                "CH07_FIG_08_AI_Data_Improvement_Roadmap.png",
+                "chapter7/CH07_FIG_08_AI_Data_Improvement_Roadmap.png",
                 5.4,
             ),
         },
@@ -541,7 +541,7 @@ def chapter_seven_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 7.9",
                 "Scalability and Operations Roadmap",
-                "CH07_FIG_09_Scalability_Operations_Roadmap.png",
+                "chapter7/CH07_FIG_09_Scalability_Operations_Roadmap.png",
                 5.4,
             ),
         },
@@ -585,7 +585,7 @@ def chapter_seven_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 7.10",
                 "Security, Governance, and Compliance Roadmap",
-                "CH07_FIG_10_Security_Governance_Compliance_Roadmap.png",
+                "chapter7/CH07_FIG_10_Security_Governance_Compliance_Roadmap.png",
                 5.4,
             ),
         },
@@ -629,7 +629,7 @@ def chapter_seven_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 7.11",
                 "Productization and Deployment Roadmap",
-                "CH07_FIG_11_Productization_Deployment_Roadmap.png",
+                "chapter7/CH07_FIG_11_Productization_Deployment_Roadmap.png",
                 5.4,
             ),
         },
@@ -674,7 +674,7 @@ def chapter_seven_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 7.12",
                 "Ethical and Societal Impact Map",
-                "CH07_FIG_12_Ethical_Societal_Impact_Map.png",
+                "chapter7/CH07_FIG_12_Ethical_Societal_Impact_Map.png",
                 5.4,
             ),
         },
@@ -704,7 +704,7 @@ def chapter_seven_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 7.13",
                 "Final Evidence and Defense Checklist",
-                "CH07_FIG_13_Final_Evidence_Defense_Checklist.png",
+                "chapter7/CH07_FIG_13_Final_Evidence_Defense_Checklist.png",
                 5.4,
             ),
             "info": (
