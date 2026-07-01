@@ -216,15 +216,15 @@ CHAPTER_TWO_FIGURES = [
     ("Figure 2.16", "Robust temporal feature-magnitude learning", 44),
     ("Figure 2.17", "Object-detection and scene-evidence pipeline", 45),
     ("Figure 2.18", "Space-time attention for video understanding", 46),
-    ("Figure 2.20", "Hybrid evidence-fusion strategies", 48),
-    ("Figure 2.21", "Evaluation metrics and threshold behavior", 50),
-    ("Figure 2.22", "Dataset landscape by realism, duration, and annotation level", 51),
-    ("Figure 2.23", "UCF-Crime categories and weak labels", 52),
-    ("Figure 2.24", "Representative compact anomaly-detection benchmarks", 53),
-    ("Figure 2.25", "RWF-2000 violence dataset characteristics", 54),
-    ("Figure 2.26", "Sources of cross-dataset domain shift", 55),
-    ("Figure 2.27", "Chronological evolution of representative literature", 56),
-    ("Figure 2.28", "Research-gap and opportunity map", 57),
+    ("Figure 2.19", "Hybrid evidence-fusion strategies", 48),
+    ("Figure 2.20", "Evaluation metrics and threshold behavior", 50),
+    ("Figure 2.21", "Dataset landscape by realism, duration, and annotation level", 51),
+    ("Figure 2.22", "UCF-Crime categories and weak labels", 52),
+    ("Figure 2.23", "Representative compact anomaly-detection benchmarks", 53),
+    ("Figure 2.24", "RWF-2000 violence dataset characteristics", 54),
+    ("Figure 2.25", "Sources of cross-dataset domain shift", 55),
+    ("Figure 2.26", "Chronological evolution of representative literature", 56),
+    ("Figure 2.27", "Research-gap and opportunity map", 57),
 ]
 
 CHAPTER_TWO_TABLES = [
@@ -1047,7 +1047,8 @@ def find_chapter_image(filename: str) -> Path | None:
     return matches[0] if matches else None
 
 
-def add_real_figure(document: Document, image_path: Path, number: str, caption: str) -> None:
+def add_real_figure(document: Document, image_path: Path, number: str, caption: str,
+                    height_cm: float = 7.1) -> None:
     """Insert an actual figure image (framed, centred) with its caption below."""
     try:
         from PIL import Image
@@ -1056,6 +1057,8 @@ def add_real_figure(document: Document, image_path: Path, number: str, caption: 
     except Exception:
         aspect = 1.6
     max_w, max_h = 15.8, 10.6
+    if aspect >= 1:
+        max_h = min(max_h, max(3.0, height_cm))
     width_cm = max_w
     if width_cm / aspect > max_h:
         width_cm = max_h * aspect
@@ -1090,7 +1093,7 @@ def add_figure_placeholder(document: Document, number: str, caption: str,
                            orientation: str = "Landscape 16:9") -> None:
     real = find_chapter_image(filename)
     if real is not None:
-        add_real_figure(document, real, number, caption)
+        add_real_figure(document, real, number, caption, height_cm)
         return
     table = document.add_table(1, 1)
     table.alignment = WD_TABLE_ALIGNMENT.CENTER
@@ -3663,9 +3666,9 @@ def chapter_two_page_specs() -> list[dict]:
                 ),
             ],
             "figure": (
-                "Figure 2.20",
+                "Figure 2.19",
                 "Hybrid evidence-fusion strategies",
-                "CH02_FIG_20_Hybrid_Evidence_Fusion.png",
+                "CH02_FIG_19_Hybrid_Evidence_Fusion.png",
                 7.2,
             ),
         },
@@ -3757,9 +3760,9 @@ def chapter_two_page_specs() -> list[dict]:
                 "font_size": 7.4,
             },
             "figure": (
-                "Figure 2.21",
+                "Figure 2.20",
                 "Evaluation metrics and threshold behavior",
-                "CH02_FIG_21_Metrics_Thresholds.png",
+                "CH02_FIG_20_Metrics_Thresholds.png",
                 3.9,
             ),
         },
@@ -3804,9 +3807,9 @@ def chapter_two_page_specs() -> list[dict]:
                 "font_size": 7.4,
             },
             "figure": (
-                "Figure 2.22",
+                "Figure 2.21",
                 "Dataset landscape by realism, duration, and annotation level",
-                "CH02_FIG_22_Dataset_Landscape.png",
+                "CH02_FIG_21_Dataset_Landscape.png",
                 3.8,
             ),
         },
@@ -3844,9 +3847,9 @@ def chapter_two_page_specs() -> list[dict]:
                 ),
             ],
             "figure": (
-                "Figure 2.23",
+                "Figure 2.22",
                 "UCF-Crime categories and weak labels",
-                "CH02_FIG_23_UCF_Crime_Categories.png",
+                "CH02_FIG_22_UCF_Crime_Categories.png",
                 7.2,
             ),
         },
@@ -3884,9 +3887,9 @@ def chapter_two_page_specs() -> list[dict]:
                 ),
             ],
             "figure": (
-                "Figure 2.24",
+                "Figure 2.23",
                 "Representative compact anomaly-detection benchmarks",
-                "CH02_FIG_24_Compact_Benchmark_Scenes.jpg",
+                "CH02_FIG_23_Compact_Benchmark_Scenes.jpg",
                 7.5,
             ),
         },
@@ -3913,9 +3916,9 @@ def chapter_two_page_specs() -> list[dict]:
                 ),
             ],
             "figure": (
-                "Figure 2.25",
+                "Figure 2.24",
                 "RWF-2000 violence dataset characteristics",
-                "CH02_FIG_25_Violence_Datasets.png",
+                "CH02_FIG_24_Violence_Datasets.png",
                 7.0,
             ),
         },
@@ -3954,9 +3957,9 @@ def chapter_two_page_specs() -> list[dict]:
                 ),
             ],
             "figure": (
-                "Figure 2.26",
+                "Figure 2.25",
                 "Sources of cross-dataset domain shift",
-                "CH02_FIG_26_Domain_Shift.png",
+                "CH02_FIG_25_Domain_Shift.png",
                 7.0,
             ),
         },
@@ -3991,9 +3994,9 @@ def chapter_two_page_specs() -> list[dict]:
                 "font_size": 7.2,
             },
             "figure": (
-                "Figure 2.27",
+                "Figure 2.26",
                 "Chronological evolution of representative literature",
-                "CH02_FIG_27_Literature_Timeline.png",
+                "CH02_FIG_26_Literature_Timeline.png",
                 4.2,
             ),
             "info": (
@@ -4037,9 +4040,9 @@ def chapter_two_page_specs() -> list[dict]:
                 "font_size": 7.5,
             },
             "figure": (
-                "Figure 2.28",
+                "Figure 2.27",
                 "Research-gap and opportunity map",
-                "CH02_FIG_28_Research_Gap_Map.png",
+                "CH02_FIG_27_Research_Gap_Map.png",
                 5.0,
             ),
             "info": (
