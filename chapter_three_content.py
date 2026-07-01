@@ -290,7 +290,7 @@ def chapter_three_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 3.1",
                 "CrimeLens system context and external entities",
-                "CH03_FIG_01_System_Context.png",
+                "Chapter 3/System_Context.png",
                 8.1,
             ),
         },
@@ -340,7 +340,7 @@ def chapter_three_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 3.2",
                 "Actor authority and interface-surface map",
-                "CH03_FIG_02_Actor_Authority_Map.png",
+                "Chapter 3/Actor_Authority_Map.png",
                 4.1,
             ),
         },
@@ -1131,7 +1131,7 @@ def chapter_three_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 3.3",
                 "Data Flow Diagram — Context Level 0",
-                "CH03_FIG_03_DFD_Context_Level_0.png",
+                "Chapter 3/Context_Level_0.png",
                 10.5,
             ),
         },
@@ -1160,7 +1160,7 @@ def chapter_three_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 3.4",
                 "Data Flow Diagram — Level 1",
-                "CH03_FIG_04_DFD_Level_1.png",
+                "Chapter 3/DFD_Level_1.png",
                 11.0,
             ),
         },
@@ -1189,7 +1189,7 @@ def chapter_three_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 3.5",
                 "Data Flow Diagram — Level 2 detection intake and priority",
-                "CH03_FIG_05_DFD_L2_Detection_Priority.png",
+                "Chapter 3/DFD_L2_Detection_Priority.png",
                 11.0,
             ),
         },
@@ -1218,7 +1218,7 @@ def chapter_three_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 3.6",
                 "Data Flow Diagram — Level 2 dispatch and field response",
-                "CH03_FIG_06_DFD_L2_Dispatch_Response.png",
+                "Chapter 3/DFD_L2_Dispatch_Response.png",
                 11.0,
             ),
         },
@@ -1247,7 +1247,7 @@ def chapter_three_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 3.7",
                 "Data Flow Diagram — Level 2 supporting services",
-                "CH03_FIG_07_DFD_L2_Supporting_Services.png",
+                "Chapter 3/DFD_L2_Supporting_Services.png",
                 11.0,
             ),
         },
@@ -1306,7 +1306,7 @@ def chapter_three_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 3.8",
                 "CrimeLens use-case overview",
-                "CH03_FIG_08_Use_Case_Overview.png",
+                "Chapter 3/Use_Case_Overview.png",
                 11.2,
             ),
         },
@@ -1329,7 +1329,7 @@ def chapter_three_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 3.9",
                 "System-administrator use cases",
-                "CH03_FIG_09_Admin_Use_Cases.png",
+                "Chapter 3/Admin_Use_Cases.png",
                 11.2,
             ),
         },
@@ -1351,7 +1351,7 @@ def chapter_three_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 3.10",
                 "Police-station management use cases",
-                "CH03_FIG_10_Station_Management_Use_Cases.png",
+                "Chapter 3/Station_Management_Use_Cases.png",
                 11.2,
             ),
         },
@@ -1374,7 +1374,7 @@ def chapter_three_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 3.11",
                 "Dispatcher operational use cases",
-                "CH03_FIG_11_Dispatcher_Use_Cases.png",
+                "Chapter 3/Dispatcher_Use_Cases.png",
                 11.2,
             ),
         },
@@ -1396,7 +1396,7 @@ def chapter_three_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 3.12",
                 "Field-officer mobile use cases",
-                "CH03_FIG_12_Officer_Use_Cases.png",
+                "Chapter 3/Officer_Use_Cases.png",
                 11.2,
             ),
         },
@@ -1420,7 +1420,7 @@ def chapter_three_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 3.13",
                 "AI, camera, citizen, and worker use cases",
-                "CH03_FIG_13_Machine_Citizen_Worker_Use_Cases.png",
+                "Chapter 3/Machine_Citizen_Worker_Use_Cases.png",
                 11.2,
             ),
         },
@@ -1848,7 +1848,7 @@ def chapter_three_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 3.14",
                 "Sequence diagram — AI detection to Incident",
-                "CH03_FIG_14_Sequence_AI_To_Incident.png",
+                "Chapter 3/Sequence_AI_To_Incident.png",
                 11.2,
             ),
         },
@@ -1871,7 +1871,7 @@ def chapter_three_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 3.15",
                 "Sequence diagram — claim, review, and dispatch",
-                "CH03_FIG_15_Sequence_Claim_Dispatch.png",
+                "Chapter 3/Sequence_Claim_Dispatch.png",
                 11.2,
             ),
         },
@@ -1893,7 +1893,7 @@ def chapter_three_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 3.16",
                 "Sequence diagram — officer response and escalation",
-                "CH03_FIG_16_Sequence_Officer_Response.png",
+                "Chapter 3/Sequence_Officer_Response.png",
                 11.2,
             ),
         },
@@ -1915,7 +1915,7 @@ def chapter_three_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 3.17",
                 "Activity diagram — Incident lifecycle",
-                "CH03_FIG_17_Activity_Incident_Lifecycle.png",
+                "Chapter 3/Activity_Incident_Lifecycle.png",
                 11.2,
             ),
         },
@@ -1936,7 +1936,7 @@ def chapter_three_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 3.18",
                 "Activity diagram — citizen tip and evidence flow",
-                "CH03_FIG_18_Activity_Tip_Evidence.png",
+                "Chapter 3/Activity_Tip_Evidence.png",
                 11.2,
             ),
         },
@@ -1965,7 +1965,7 @@ def chapter_three_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 3.19",
                 "Incident, Crime, and Panic state machines",
-                "CH03_FIG_19_State_Machines.png",
+                "Chapter 3/State_Machines.png",
                 10.2,
             ),
         },
@@ -1996,7 +1996,7 @@ def chapter_three_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 3.20",
                 "Conceptual class diagram",
-                "CH03_FIG_20_Conceptual_Class_Diagram.png",
+                "Chapter 3/Conceptual_Class_Diagram.png",
                 10.5,
             ),
         },
@@ -2030,7 +2030,7 @@ def chapter_three_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 3.21",
                 "Requirements traceability map",
-                "CH03_FIG_21_Requirements_Traceability.png",
+                "Chapter 3/Requirements_Traceability.png",
                 8.5,
             ),
             "info": (
