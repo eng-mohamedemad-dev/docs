@@ -844,9 +844,9 @@ def chapter_three_page_specs() -> list[dict]:
                 accent=TEAL,
             ),
             "info": (
-                "Presentation rule",
-                "Use web screenshots for the Police Station's primary workflow. Mention "
-                "mobile mode as operational assistance and show it only where it adds value.",
+                "Surface allocation",
+                "The Police Station web console remains the primary operational workflow, "
+                "while mobile access is limited to supporting actions away from the console.",
                 GOLD,
                 "SURFACE",
             ),
@@ -1018,7 +1018,7 @@ def chapter_three_page_specs() -> list[dict]:
                     ["Location and assignment", "Redis GEO primary path; PostGIS durable/fallback data", "Nearest-officer lookup under 100 ms with recorded dataset"],
                     ["Detection-to-dispatch", "Realtime event + queued/push delivery", "Timestamped camera-to-dispatch run under 10 s target"],
                     ["Streaming", "One gateway process per camera; HLS/WebRTC fan-out", "Measured LAN glass-to-glass latency around 1 s or lower"],
-                    ["Normal APIs", "Pagination, query logging, caching, queues", "p95 CRUD response below 500 ms under stated load"],
+                    ["Normal APIs", "Pagination, query logging, caching, queues", "Load-test report for p95 CRUD response target below 500 ms"],
                     ["Concurrency", "Transactions, locks, unique constraints, guarded claim updates", "Automated race tests and failure recovery evidence"],
                     ["Availability", "Independent heartbeats, health endpoints, failed jobs, process supervisors", "Recorded recovery and service-level test"],
                     ["Scheduling", "Stale claim, cleanup, reports, ledger checks", "Confirm production scheduler; stale-Crime escalation is not currently scheduled"],
@@ -1091,10 +1091,9 @@ def chapter_three_page_specs() -> list[dict]:
                 (
                     "The native Draw.io source uses a separate page for each model so complex "
                     "domains are decomposed rather than squeezed into one unreadable picture. "
-                    "Every exported image has a matching filename and Word placeholder. "
                     "Diagrams use white backgrounds, explicit system boundaries, consistent "
-                    "colors, readable verb phrases, named data flows, guarded alternatives, "
-                    "and coordinates designed for landscape insertion.",
+                    "labels and line styles, readable verb phrases, named data flows, and "
+                    "guarded alternatives so the analysis remains legible at print scale.",
                     None,
                 ),
             ],

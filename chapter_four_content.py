@@ -157,11 +157,10 @@ def chapter_four_page_specs() -> list[dict]:
                     "[29], [30]",
                 ),
                 (
-                    "All diagrams in this chapter are intentionally represented as "
-                    "image placeholders in the Word file. The placeholders define the "
-                    "exact required image names and captions so the final figures can "
-                    "be inserted manually from Word after they are exported from a "
-                    "dedicated diagramming tool.",
+                    "Each design figure supports a specific viewpoint rather than repeating "
+                    "implementation details. The diagrams are used to clarify boundaries, "
+                    "dependencies, data ownership, and operational responsibilities that are "
+                    "too dense to express through prose alone.",
                     None,
                 ),
             ],
@@ -1241,10 +1240,9 @@ def chapter_four_page_specs() -> list[dict]:
                     "[30]",
                 ),
                 (
-                    "For the final Word document, screenshots should be added later as "
-                    "selected interface evidence, not as random decoration. A screenshot "
-                    "should demonstrate a design decision: live monitoring, an incident "
-                    "review panel, officer assignment, admin AI management, camera control, "
+                    "Interface evidence is selected for the design decision it demonstrates, "
+                    "not for decoration. Representative views should clarify live monitoring, "
+                    "incident review, officer assignment, admin AI management, camera control, "
                     "citizen-tip triage, panic alert, or evidence display.",
                     None,
                 ),
@@ -1252,7 +1250,7 @@ def chapter_four_page_specs() -> list[dict]:
             "table": table(
                 "Table 4.26",
                 "Navigation and screen-group design",
-                ["Screen group", "Primary actor", "What the screenshot should prove"],
+                ["Screen group", "Primary actor", "Design evidence demonstrated"],
                 [
                     ["Admin dashboard", "Admin", "System health, stations, AI models, and configuration visibility"],
                     ["Dispatcher live monitoring", "Dispatcher", "Camera grid, incident queue, and realtime context in one workspace"],
@@ -1454,10 +1452,10 @@ def chapter_four_page_specs() -> list[dict]:
                     "[30]",
                 ),
                 (
-                    "The checklist below will also help when images are inserted later. A "
-                    "diagram should not be added simply because it looks technical; it should "
-                    "prove one design relationship. If a diagram cannot be read on an A4 page, "
-                    "it should be split rather than reduced until its text becomes unusable.",
+                    "The validation checklist also guards against decorative diagrams. Each "
+                    "diagram should support a design relationship. If a diagram cannot be read "
+                    "on an A4 page, it should be split rather than reduced until its text "
+                    "becomes unusable.",
                     None,
                 ),
             ],
@@ -1471,7 +1469,7 @@ def chapter_four_page_specs() -> list[dict]:
                     ["Security boundaries are explicit", "Guards, HMAC, IP allow-list, encryption, signed URLs, tenancy", "Tables 4.20 to 4.23"],
                     ["Realtime is recoverable", "Events supplement persistent state rather than replacing it", "Table 4.24"],
                     ["Queues are separated by workload", "Media work and notifications do not block critical requests", "Table 4.28"],
-                    ["Screenshots prove design decisions", "Each later screenshot demonstrates a workflow or authority boundary", "Table 4.26"],
+                    ["Interface evidence supports design decisions", "Each referenced view demonstrates a workflow or authority boundary", "Table 4.26"],
                     ["Future limitations are deferred", "Known gaps are discussed in Chapter Seven rather than hidden in design", "Conclusion and Future Work"],
                 ],
                 [4.2, 7.0, 5.0],

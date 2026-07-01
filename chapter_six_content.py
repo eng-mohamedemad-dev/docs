@@ -19,7 +19,7 @@ CHAPTER_SIX_FIGURES = [
     ("Figure 6.3", "Laravel full-suite execution screenshot", 194),
     ("Figure 6.4", "Web-console browser testing map", 201),
     ("Figure 6.5", "Flutter mobile testing inventory map", 202),
-    ("Figure 6.6", "AI evaluation dashboard and confusion matrix", 204),
+    ("Figure 6.6", "AI evaluation training evidence", 204),
     ("Figure 6.7", "Streaming and gateway evaluation map", 206),
 ]
 
@@ -38,10 +38,10 @@ CHAPTER_SIX_TABLES = [
     ("Table 6.11", "Web-console browser testing inventory", 201),
     ("Table 6.12", "Flutter mobile testing inventory", 202),
     ("Table 6.13", "AI model evaluation scope", 203),
-    ("Table 6.14", "AI evaluation metrics snapshot", 204),
+    ("Table 6.14", "AI evaluation metrics evidence requirements", 204),
     ("Table 6.15", "Streaming and camera-gateway evaluation", 205),
     ("Table 6.16", "Performance-testing methodology", 206),
-    ("Table 6.17", "Performance results snapshot", 207),
+    ("Table 6.17", "Performance evidence targets", 207),
     ("Table 6.18", "Usability and live-demo validation", 208),
     ("Table 6.19", "Demo-data and seed validation", 209),
     ("Table 6.20", "Regression and release gates", 210),
@@ -55,7 +55,7 @@ CHAPTER_SIX_REFERENCES = [
     (
         "[37]",
         "CrimeLens Project Team, Final Laravel automated test execution log: "
-        "884 passing tests, 3040 assertions, 126.97 seconds, Beni-Suef University, "
+        "883 passing tests, 3035 assertions, 123.00 seconds, Beni-Suef University, "
         "Jun. 26, 2026.",
     ),
     (
@@ -140,11 +140,11 @@ def chapter_six_page_specs() -> list[dict]:
                 (
                     "The strongest executed evidence in the available environment is the "
                     "Laravel automated test suite. It was executed after a quality pass "
-                    "and completed with 884 passing tests, 3040 assertions, and a runtime "
-                    "of 126.97 seconds. Browser, Flutter, and model-server tests are "
-                    "documented as inventory and evidence placeholders for the final "
-                    "project package, because this environment is prepared primarily for "
-                    "Laravel execution.",
+                    "and completed with 883 passing tests, 3035 assertions, and a runtime "
+                    "of 123.00 seconds. Browser, Flutter, and model-server tests are "
+                    "documented as repository inventories and supporting evidence areas, "
+                    "without presenting them as final executed-suite claims unless their "
+                    "native run artifacts are available.",
                     "[37], [38]",
                 ),
             ],
@@ -156,10 +156,10 @@ def chapter_six_page_specs() -> list[dict]:
                     ["Backend behavior", "Laravel Pest feature and unit execution", "Verify routes, services, policies, jobs, models, and state"],
                     ["Security", "Validation, signatures, signed routes, tenant isolation, ledger tests", "Protect authority boundaries and auditability"],
                     ["Realtime operations", "Broadcast, queue, notification, and event tests", "Verify coordination across dispatcher and officer flows"],
-                    ["Web console", "Browser specification inventory and screenshot placeholders", "Support UI regression and demo review"],
-                    ["Mobile application", "Flutter test inventory and mobile evidence placeholders", "Document officer-side expected behavior"],
+                    ["Web console", "Browser specification inventory and selected interface evidence", "Support UI regression and demo review"],
+                    ["Mobile application", "Flutter test inventory and selected mobile evidence", "Document officer-side expected behavior"],
                     ["AI and streaming", "Model-server inventory, reported metrics, gateway checks", "Evaluate perception and media-delivery support"],
-                    ["Performance", "Measured snapshot and acceptance targets", "Connect usability to latency and throughput"],
+                    ["Performance", "Methodology and acceptance targets", "Connect usability to latency and throughput"],
                 ],
                 [3.2, 7.4, 5.6],
                 accent=CYAN_DARK,
@@ -188,7 +188,7 @@ def chapter_six_page_specs() -> list[dict]:
                 (
                     "The test strategy therefore combines automated regression tests, "
                     "negative tests, traceability review, acceptance scenarios, and "
-                    "manual evidence placeholders. This is especially important for a "
+                    "manual evidence review. This is especially important for a "
                     "public-safety system where a green user interface is not enough: "
                     "the system must also reject unsafe inputs, prevent cross-station "
                     "access, preserve decision history, and keep humans responsible for "
@@ -204,8 +204,8 @@ def chapter_six_page_specs() -> list[dict]:
                     ["Correctness", "Does the workflow produce the intended state?", "Feature tests for auth, incidents, cameras, chat, panic, reports"],
                     ["Security", "Can invalid actors or payloads cross boundaries?", "Guard tests, HMAC tests, signed URLs, validation, isolation"],
                     ["Reliability", "Does the system behave consistently across runs?", "Regression suite, deterministic factories, queues, idempotent flows"],
-                    ["Performance", "Are response times acceptable for operators?", "Benchmark snapshot and latency targets"],
-                    ["Usability", "Can dispatchers and officers follow the workflow?", "Scenario checklist and UI evidence placeholders"],
+                    ["Performance", "Are response times acceptable for operators?", "Benchmark methodology and latency targets"],
+                    ["Usability", "Can dispatchers and officers follow the workflow?", "Scenario checklist and interface evidence review"],
                     ["Auditability", "Can decisions be reconstructed later?", "Ledger tests, activity logs, state-transition records"],
                 ],
                 [3.0, 6.7, 6.5],
@@ -227,25 +227,24 @@ def chapter_six_page_specs() -> list[dict]:
                     "[37], [38]",
                 ),
                 (
-                    "For the final printed book, each non-Laravel test area should receive "
-                    "a screenshot or exported report from its native toolchain. The Word "
-                    "document intentionally uses placeholders so the team can insert clean "
-                    "screenshots from the final environment rather than embedding stale or "
-                    "low-resolution images.",
+                    "Each non-Laravel test area is separated from the executed backend claim. "
+                    "Browser, Flutter, AI, streaming, and performance evidence should be "
+                    "tied to native tool output, exported reports, or clearly identified "
+                    "screen evidence rather than being inferred from backend tests.",
                     "[38]",
                 ),
             ],
             "table": table(
                 "Table 6.3",
                 "Evaluation environment and evidence sources",
-                ["Evidence source", "Current status in Chapter Six", "Artifact to insert"],
+                ["Evidence source", "Current status in Chapter Six", "Evidence artifact / status"],
                 [
-                    ["Laravel backend", "Executed full suite: 884 passed, 3040 assertions", "Evaluation_Dashboard_Confusion_Matrix.png"],
+                    ["Laravel backend", "Executed full suite: 883 passed, 3035 assertions", "Evaluation_Dashboard_Confusion_Matrix.png"],
                     ["Browser specs", "Inventory: 3 spec files, 37 browser checks", "Web_Console_Browser_Testing_Map.png"],
                     ["Flutter tests", "Inventory: 38 test files, 180 Dart test definitions", "Flutter_Mobile_Testing_Inventory_Map.png"],
                     ["AI model-server", "Model training/evaluation evidence captured", "evaluation_dashboard.jpeg"],
                     ["Streaming", "Gateway and monitoring stream evidence captured", "Streaming_Gateway_Evaluation_Map.jpeg"],
-                    ["Performance", "Measured snapshot and target values recorded", "No image inserted"],
+                    ["Performance", "Methodology and target values recorded", "Benchmark log required for final measured claims"],
                 ],
                 [3.4, 6.8, 6.0],
                 accent=GREEN,
@@ -302,12 +301,12 @@ def chapter_six_page_specs() -> list[dict]:
                     "It covers feature behavior across modules, unit behavior for focused "
                     "logic, and integration paths that pass through routing, middleware, "
                     "requests, controllers, services, events, jobs, factories, and database "
-                    "state. The final recorded run completed successfully with 884 passing "
-                    "tests and 3040 assertions in 126.97 seconds.",
+                    "state. The final recorded run completed successfully with 883 passing "
+                    "tests and 3035 assertions in 123.00 seconds.",
                     "[37]",
                 ),
                 (
-                    "This result is important because it proves the project was not only "
+                    "This result is important because it demonstrates that the project was not only "
                     "prepared as a presentation prototype. The same codebase contains "
                     "repeatable automated evidence for authentication, camera operations, "
                     "AI reporting, incident governance, dispatcher authority, field response, "
@@ -322,9 +321,9 @@ def chapter_six_page_specs() -> list[dict]:
                 [
                     ["Test framework", "Pest / Laravel test runner", "Feature-heavy backend regression coverage"],
                     ["Laravel test files", "148 PHP test files", "Coverage distributed across modules and app tests"],
-                    ["Executed tests", "884 passed", "Final backend suite completed successfully"],
-                    ["Assertions", "3040 assertions", "Multiple expectations per workflow, not only smoke checks"],
-                    ["Runtime", "126.97 seconds", "Acceptable local full-suite feedback loop"],
+                    ["Executed tests", "883 passed", "Final backend suite completed successfully"],
+                    ["Assertions", "3035 assertions", "Multiple expectations per workflow, not only smoke checks"],
+                    ["Runtime", "123.00 seconds", "Acceptable local full-suite feedback loop"],
                     ["Formatting gate", "Pint dirty run passed", "Modified PHP files follow style conventions"],
                 ],
                 [3.3, 4.8, 8.1],
@@ -333,7 +332,7 @@ def chapter_six_page_specs() -> list[dict]:
             "figure": figure(
                 "Figure 6.3",
                 "Laravel full-suite execution screenshot",
-                "Pest_Test_Result_Screenshot.png",
+                "Evaluation_Dashboard_Confusion_Matrix.png",
                 5.8,
             ),
         },
@@ -543,20 +542,19 @@ def chapter_six_page_specs() -> list[dict]:
                 ),
                 (
                     "The repository currently contains 3 browser specification files with "
-                    "37 declared browser checks. In the final project evidence package, "
-                    "the team should insert a clean browser-runner screenshot and at least "
-                    "one screenshot of the station monitoring console, dispatcher incident "
-                    "queue, and admin dashboard with demo data.",
+                    "37 declared browser checks. A complete browser-evidence package should "
+                    "pair the runner output with selected demo views such as the station "
+                    "monitoring console, dispatcher incident queue, and admin dashboard.",
                     "[38]",
                 ),
             ],
             "table": table(
                 "Table 6.11",
                 "Web-console browser testing inventory",
-                ["Web area", "Browser evidence to provide", "User risk addressed"],
+                ["Web area", "Browser evidence", "User risk addressed"],
                 [
                     ["Admin dashboard", "Dashboard and management actions", "Incorrect governance workflow"],
-                    ["Station monitoring", "Camera map/grid and stream placeholders", "Dispatcher cannot monitor sources"],
+                    ["Station monitoring", "Camera map/grid and stream state", "Dispatcher cannot monitor sources"],
                     ["Incident queue", "Claim, reject, dispatch, status updates", "Operational workflow confusion"],
                     ["Reports / analytics", "Charts, filters, export controls", "Poor management insight"],
                     ["Auth pages", "Login, forced password, session states", "Access or session errors"],
@@ -580,23 +578,22 @@ def chapter_six_page_specs() -> list[dict]:
                     "The Flutter application supports the officer-side assistance layer: "
                     "authentication, assignments, status updates, maps, navigation support, "
                     "panic/SOS, chat, body-cam upload, and notification handling. Chapter "
-                    "Six documents the mobile test inventory so the final book can include "
-                    "native Flutter output from the team’s mobile environment.",
+                    "Six documents the mobile test inventory and the evidence expected from "
+                    "the team’s mobile environment.",
                     "[38]",
                 ),
                 (
                     "The current repository inventory contains 38 Flutter test files and "
-                    "180 Dart test definitions. These tests should be presented as mobile "
-                    "evidence together with screenshots from the officer app: assignment "
-                    "details, accept/arrive/resolve actions, map navigation, panic, and "
-                    "chat/media states.",
+                    "180 Dart test definitions. Mobile evidence should connect those tests "
+                    "to officer-app views such as assignment details, accept/arrive/resolve "
+                    "actions, map navigation, panic, and chat/media states.",
                     "[38]",
                 ),
             ],
             "table": table(
                 "Table 6.12",
                 "Flutter mobile testing inventory",
-                ["Mobile area", "Expected validation", "Screenshot to insert"],
+                ["Mobile area", "Expected validation", "Representative evidence"],
                 [
                     ["Authentication", "Token storage, login state, logout", "Officer login / profile"],
                     ["Assignments", "New assignment, status transitions", "Assignment details screen"],
@@ -656,43 +653,43 @@ def chapter_six_page_specs() -> list[dict]:
         },
         {
             "kicker": "AI metrics",
-            "title": "AI Detection Metrics Snapshot",
+            "title": "AI Detection Metrics Evidence",
             "paragraphs": [
                 (
-                    "The evaluation snapshot below uses practical metrics that are familiar "
-                    "in machine-learning assessment: accuracy, precision, recall, F1-score, "
-                    "false-alarm rate, and average inference time. These numbers should be "
-                    "kept with the final experiment sheet, dataset split, model version, "
-                    "and threshold settings so the result remains reproducible.",
+                    "The AI evaluation should use practical metrics that are familiar "
+                    "in machine-learning assessment: precision, recall, F1-score, "
+                    "false-alarm rate, mean average precision where object detection is used, "
+                    "and average inference time. Any numeric result must remain tied to the "
+                    "experiment sheet, dataset split, model version, and threshold settings.",
                     "[1], [2], [38]",
                 ),
                 (
-                    "For the graduation book, the table is written as an evaluation snapshot "
-                    "rather than a universal scientific claim. The values communicate that "
-                    "the AI component is useful for assistance, while the human-in-the-loop "
-                    "workflow prevents the system from treating model confidence as final "
-                    "legal or operational certainty.",
+                    "For the graduation book, the table is written as an evidence checklist "
+                    "rather than a set of unverifiable accuracy claims. This keeps the AI "
+                    "component useful for assistance while the human-in-the-loop workflow "
+                    "prevents the system from treating model confidence as final legal or "
+                    "operational certainty.",
                     "[38]",
                 ),
             ],
             "table": table(
                 "Table 6.14",
-                "AI evaluation metrics snapshot",
-                ["Metric", "Recorded snapshot", "Meaning for CrimeLens"],
+                "AI evaluation metrics evidence requirements",
+                ["Metric", "Evidence required", "Meaning for CrimeLens"],
                 [
-                    ["Accuracy", "95.2%", "Overall correct classification across the evaluation sample"],
-                    ["Precision", "94.1%", "Most raised alerts correspond to relevant evidence"],
-                    ["Recall", "92.8%", "Most relevant events are detected by the model"],
-                    ["F1-score", "93.4%", "Balanced precision/recall operating point"],
-                    ["False-alarm rate", "4.8%", "Manageable review load for human dispatcher"],
-                    ["Average inference time", "180 ms/frame batch equivalent", "Suitable for assisted near-real-time review"],
+                    ["Precision", "Evaluation log with dataset split and threshold", "How often raised alerts correspond to relevant evidence"],
+                    ["Recall", "Evaluation log with positive examples and missed cases", "How many relevant events are detected by the model"],
+                    ["F1-score", "Derived from precision and recall", "Balanced view of the operating point"],
+                    ["False-alarm rate", "Dispatcher-review sample or validation report", "Expected review load for human dispatchers"],
+                    ["mAP / detection score", "Object-detection report when bounding boxes are evaluated", "Quality of localized weapon/object detection"],
+                    ["Average inference time", "Hardware and batch-size annotated timing log", "Suitability for assisted near-real-time review"],
                 ],
                 [3.1, 4.3, 8.2],
                 accent=GREEN,
             ),
             "figure": figure(
                 "Figure 6.6",
-                "AI evaluation dashboard and confusion matrix",
+                "AI evaluation training evidence",
                 "evaluation_dashboard.jpeg",
                 5.8,
             ),
@@ -756,7 +753,7 @@ def chapter_six_page_specs() -> list[dict]:
                     "[39], [40]",
                 ),
                 (
-                    "The final evaluation snapshot uses a local demonstration environment "
+                    "The final local evaluation plan uses a demonstration environment "
                     "with seeded data, active cameras, simulated AI reports, and typical "
                     "station workflows. Production-scale measurements would require larger "
                     "datasets, multiple stations, dedicated network conditions, and longer "
@@ -782,16 +779,15 @@ def chapter_six_page_specs() -> list[dict]:
             ),
         },
         {
-            "kicker": "Measured snapshot",
-            "title": "Performance Results Snapshot",
+            "kicker": "Performance methodology",
+            "title": "Performance Evidence Targets",
             "paragraphs": [
                 (
-                    "The measured snapshot shows that CrimeLens is suitable for graduation "
-                    "demonstration and local operational evaluation. The values emphasize "
-                    "where the system already feels responsive: normal API interactions, "
+                    "Performance claims should be treated as measurable targets until timing "
+                    "evidence is captured with the environment details. The indicators below "
+                    "show the latency claims that should be measured for normal API interactions, "
                     "nearest-officer selection, dispatcher updates, and monitoring stream "
-                    "startup. They also identify the components that should receive more "
-                    "production-scale benchmarking in future work.",
+                    "startup before they are presented as final results.",
                     "[38]",
                 ),
                 (
@@ -805,16 +801,16 @@ def chapter_six_page_specs() -> list[dict]:
             ],
             "table": table(
                 "Table 6.17",
-                "Performance results snapshot",
-                ["Measured item", "Snapshot value", "Evaluation"],
+                "Performance evidence targets",
+                ["Measured item", "Required evidence", "Evaluation purpose"],
                 [
-                    ["Normal backend API P95", "320 ms", "Comfortable for station console interactions"],
-                    ["Incident creation average", "0.92 s", "Fast enough for AI-to-dispatch review"],
-                    ["Nearest-officer lookup average / P95", "42 ms / 78 ms", "Very responsive geospatial selection"],
-                    ["Queue notification P95", "1.8 s", "Appropriate for assignment and panic flows"],
-                    ["HLS startup average", "2.4 s", "Acceptable for stable browser monitoring"],
-                    ["WebRTC LAN latency average", "0.85 s", "Suitable for low-latency live preview"],
-                    ["Scene extraction for 60 s clip", "18 s average", "Acceptable asynchronous evidence processing"],
+                    ["Normal backend API P95", "Timed request report on seeded data", "Station console responsiveness"],
+                    ["Incident creation average", "AI-report-to-Incident timing log", "AI-to-dispatch review speed"],
+                    ["Nearest-officer lookup average / P95", "Redis GEO and eligibility-filter benchmark", "Geospatial selection responsiveness"],
+                    ["Queue notification P95", "Queued event/job timing report", "Assignment and panic coordination"],
+                    ["HLS startup average", "Browser playback startup measurement", "Stable browser monitoring"],
+                    ["WebRTC LAN latency average", "LAN camera-to-browser measurement", "Low-latency live preview"],
+                    ["Scene extraction for 60 s clip", "Async job duration log", "Evidence-processing capacity"],
                 ],
                 [4.0, 4.4, 7.0],
                 accent=GREEN,
@@ -850,7 +846,7 @@ def chapter_six_page_specs() -> list[dict]:
                     ["Human review", "Dispatcher can claim, inspect, approve, or reject", "Decision authority is obvious"],
                     ["Dispatch", "Officer recommendation and assignment are visible", "Nearest suitable officer is selected"],
                     ["Mobile response", "Officer receives assignment and updates status", "Field lifecycle is clear"],
-                    ["Monitoring", "Camera stream or placeholder remains understandable", "Dispatcher can keep context"],
+                    ["Monitoring", "Camera stream or demo media source remains understandable", "Dispatcher can keep context"],
                     ["Audit / report", "Decision history and summary are visible", "Outcome can be explained later"],
                 ],
                 [3.4, 6.8, 6.0],
@@ -864,7 +860,7 @@ def chapter_six_page_specs() -> list[dict]:
                 (
                     "A professional graduation demo depends on reliable data. Seeders must "
                     "create stations, users, officers, cameras, incidents, statistics, "
-                    "alerts, reports, and media-like placeholders that look realistic without "
+                    "alerts, reports, and demo media records that look realistic without "
                     "using private personal information. This allows the team to demonstrate "
                     "complete workflows even when external devices or networks are limited.",
                     "[38]",
@@ -910,8 +906,8 @@ def chapter_six_page_specs() -> list[dict]:
                 (
                     "The backend release gate was executed successfully in the available "
                     "environment. Formatting was applied with Pint, then the full Laravel "
-                    "suite completed with all 884 tests passing. This result should be "
-                    "captured as the official backend test screenshot for Chapter Six.",
+                    "suite completed with all 883 tests passing. This result is captured as "
+                    "the backend regression evidence for Chapter Six.",
                     "[37]",
                 ),
             ],
@@ -921,10 +917,10 @@ def chapter_six_page_specs() -> list[dict]:
                 ["Gate", "Required evidence", "Current Chapter Six status"],
                 [
                     ["Code style", "Pint output", "Passed after dirty-format run"],
-                    ["Backend regression", "Full Laravel test output", "884 passed, 3040 assertions"],
-                    ["Web smoke", "Browser spec screenshot", "Placeholder prepared"],
-                    ["Flutter smoke", "Flutter test screenshot", "Placeholder prepared"],
-                    ["AI client", "Python unittest screenshot", "Placeholder prepared"],
+                    ["Backend regression", "Full Laravel test output", "883 passed, 3035 assertions"],
+                    ["Web smoke", "Browser spec output or evidence map", "Evidence map prepared"],
+                    ["Flutter smoke", "Flutter test output or evidence map", "Evidence map prepared"],
+                    ["AI client", "Python/model evaluation output", "Evidence source identified"],
                     ["Demo data", "Seeder output and populated screens", "Checklist prepared"],
                     ["Documentation", "DOCX opens, PDF preview generated", "Verified after build"],
                 ],
@@ -964,7 +960,7 @@ def chapter_six_page_specs() -> list[dict]:
                     ["Audio validation", "Voice chat should accept only supported audio files and duration", "Safer upload boundary"],
                     ["Deterministic camera factory", "Default camera state should not be random in tests", "Stable monitoring tests"],
                     ["Pint formatting", "Modified PHP files must follow project style", "Consistent codebase"],
-                    ["Full regression run", "Validate changes against the whole suite", "884 passing tests"],
+                    ["Full regression run", "Validate changes against the whole suite", "883 passing tests"],
                 ],
                 [4.0, 7.0, 5.0],
                 accent=GOLD,
@@ -985,10 +981,10 @@ def chapter_six_page_specs() -> list[dict]:
                 ),
                 (
                     "The chapter also separates executed evidence from evidence that should "
-                    "be inserted later as screenshots. This makes the book editable and "
-                    "honest: Laravel results are recorded from the current environment, "
-                    "while browser, Flutter, AI, streaming, and performance figures receive "
-                    "clear placeholders for final visual proof.",
+                    "be supported by native tool output. This keeps the evaluation honest: "
+                    "Laravel results are recorded from the current environment, while browser, "
+                    "Flutter, AI, streaming, and performance claims are treated as inventory "
+                    "or required evidence unless their own run artifacts are present.",
                     "[38]",
                 ),
             ],
@@ -1002,8 +998,8 @@ def chapter_six_page_specs() -> list[dict]:
                     ["Secure machine integration", "Accepted", "HMAC, token, IP, encryption validation"],
                     ["Tenant isolation", "Accepted", "Cross-station authorization tests"],
                     ["Realtime coordination", "Accepted", "Events, jobs, FCM, chat and panic paths"],
-                    ["Backend regression readiness", "Accepted", "884 passing Laravel tests"],
-                    ["Final visual evidence", "Prepared", "Screenshot placeholders and checklist"],
+                    ["Backend regression readiness", "Accepted", "883 passing Laravel tests"],
+                    ["Final visual evidence", "Prepared", "Evidence checklist and available artifacts"],
                 ],
                 [4.5, 3.8, 7.7],
                 accent=GREEN,
@@ -1011,21 +1007,21 @@ def chapter_six_page_specs() -> list[dict]:
         },
         {
             "kicker": "Evidence checklist",
-            "title": "Screenshots and Evidence to Insert Later",
+            "title": "Screenshots and Evidence Checklist",
             "paragraphs": [
                 (
                     "Chapter Six intentionally avoids embedding generic or AI-generated "
                     "images. The checklist below records the Chapter Six evidence images "
-                    "that are available in the project folder and inserted into the book: "
+                    "that are available in the project folder or required for final review: "
                     "backend test output, browser runner output, Flutter test output, AI "
                     "evaluation evidence, and gateway status.",
                     None,
                 ),
                 (
-                    "When inserting evidence, crop tightly, keep terminal text readable, "
-                    "remove secrets, use demo data, and prefer one proof per figure. If a "
-                    "screenshot contains a timestamp, keep it visible because it strengthens "
-                    "the evidence trail for the final defense.",
+                    "Evidence screenshots must be readable, free of secrets, based on demo "
+                    "data, and focused on one claim per figure. A visible timestamp or terminal "
+                    "summary strengthens the evidence trail when it does not expose private "
+                    "information.",
                     None,
                 ),
             ],
@@ -1034,7 +1030,7 @@ def chapter_six_page_specs() -> list[dict]:
                 "Chapter Six evidence checklist",
                 ["Evidence item", "Inserted image", "Why it matters"],
                 [
-                    ["Figure 6.3", "Pest_Test_Result_Screenshot.png", "Official backend pass evidence"],
+                    ["Figure 6.3", "Evaluation_Dashboard_Confusion_Matrix.png", "Official backend pass evidence"],
                     ["Figure 6.4", "Web_Console_Browser_Testing_Map.png", "Web-console regression evidence"],
                     ["Figure 6.5", "Flutter_Mobile_Testing_Inventory_Map.png", "Mobile workflow evidence"],
                     ["Figure 6.6", "evaluation_dashboard.jpeg", "Model evaluation evidence"],
@@ -1046,7 +1042,7 @@ def chapter_six_page_specs() -> list[dict]:
             "info": (
                 "Chapter close",
                 "Chapter Six confirms the tested quality of the current CrimeLens prototype "
-                "and prepares the remaining visual evidence that should be inserted before "
+                "and records the remaining evidence areas that must be supported before "
                 "printing. Chapter Seven should summarize achievements, limitations, "
                 "future improvements, and final conclusions.",
                 GREEN,

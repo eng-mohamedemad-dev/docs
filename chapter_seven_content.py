@@ -130,7 +130,7 @@ def chapter_seven_page_specs() -> list[dict]:
                     "integrated AI-assisted dispatch workflow. It connects camera evidence, "
                     "AI reporting, human review, priority explanation, field assignment, "
                     "real-time coordination, mobile response, and audit records within one "
-                    "coherent system. The project therefore proves the feasibility of the "
+                    "coherent system. The project therefore demonstrates the feasibility of the "
                     "principle used throughout the documentation: AI reports, humans make "
                     "the final decision, and the backend enforces accountable and traceable "
                     "action.",
@@ -193,7 +193,7 @@ def chapter_seven_page_specs() -> list[dict]:
                     ["Provide live monitoring", "Station web console consumes camera stream URLs", "Gateway and monitoring module"],
                     ["Protect authority boundaries", "Multi-guard authentication, tenant isolation, and signed media", "Security tests and design"],
                     ["Provide auditability", "Activity records and a hash-chained decision ledger", "Ledger design and tests"],
-                    ["Demonstrate quality", "884 passing Laravel test cases and structured evidence", "Chapter Six testing results"],
+                    ["Demonstrate quality", "883 passing Laravel test cases and structured evidence", "Chapter Six testing results"],
                 ],
                 [4.0, 6.5, 5.7],
                 accent=GREEN,
@@ -693,10 +693,10 @@ def chapter_seven_page_specs() -> list[dict]:
                     "[43]",
                 ),
                 (
-                    "The final defense should emphasize the complete project journey: "
+                    "The final project narrative connects the complete project journey: "
                     "literature review, requirements, diagrams, architecture, implementation, "
                     "testing, demonstration evidence, limitations, and a future roadmap. "
-                    "Together these elements demonstrate both technical depth and "
+                    "Together, these elements demonstrate both technical depth and "
                     "engineering discipline.",
                     "[43]",
                 ),

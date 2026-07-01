@@ -2616,9 +2616,9 @@ def chapter_page_21(document: Document) -> None:
     add_info_box(
         document,
         "Current repository inventory",
-        "The repository documentation records 884 discovered Pest cases across 148 "
-        "Laravel test files and 38 Flutter test files. These are inventory counts, not "
-        "a claim that every test passed in the most recent environment.",
+        "The current backend evidence records 883 passing Pest cases across 148 "
+        "Laravel test files, while the mobile repository contains 38 Flutter test "
+        "files. Inventory counts are reported separately from executed-suite results.",
         GREEN,
         "EVIDENCE",
     )
@@ -4252,8 +4252,8 @@ def add_chapter_six_opener(document: Document) -> None:
         "AI Metrics  ·  Streaming  ·  Performance",
         "This chapter evaluates CrimeLens through executed backend tests, "
         "traceability, validation evidence, security checks, realtime behavior, "
-        "AI metrics, streaming readiness, performance snapshots, and final "
-        "evidence placeholders for the graduation defense.",
+        "AI metrics, streaming readiness, performance methodology, and final "
+        "evidence artifacts for project review.",
         title_size=28,
     )
 
