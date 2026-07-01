@@ -1078,6 +1078,7 @@ def add_real_figure(document: Document, image_path: Path, number: str, caption: 
     )
     p = cell.paragraphs[0]
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p.paragraph_format.keep_with_next = True
     p.add_run().add_picture(str(image_path), width=Cm(width_cm))
 
     caption_p = document.add_paragraph(style="Figure Caption")
