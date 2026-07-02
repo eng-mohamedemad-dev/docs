@@ -93,6 +93,9 @@ BLACK = "000000"
 INK_MUTED = "555555"
 BORDER = "C9D5E5"
 
+CONTENT_FONT_BUMP = 1
+CONTENT_FONT_BUMP_MAX_SIZE = 13.0
+
 EDITORIAL_RULES = (
     "Use a white academic page background throughout the entire book.",
     "Use color only for restrained headings, rules, borders, and small accents.",
@@ -647,7 +650,7 @@ def setup_styles(document: Document) -> None:
     normal = styles["Normal"]
     normal.font.name = "Cambria"
     normal._element.rPr.rFonts.set(qn("w:eastAsia"), "Cambria")
-    normal.font.size = Pt(11.5)
+    normal.font.size = Pt(11.5 + CONTENT_FONT_BUMP)
     normal.font.color.rgb = rgb(TEXT)
     normal.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
     normal.paragraph_format.line_spacing_rule = WD_LINE_SPACING.MULTIPLE
@@ -688,7 +691,7 @@ def setup_styles(document: Document) -> None:
             style = styles[style_name]
         style.font.name = "Cambria"
         style._element.rPr.rFonts.set(qn("w:eastAsia"), "Cambria")
-        style.font.size = Pt(9.5)
+        style.font.size = Pt(9.5 + CONTENT_FONT_BUMP)
         style.font.italic = True
         style.font.color.rgb = rgb(color)
         style.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -702,7 +705,7 @@ def setup_styles(document: Document) -> None:
         subtitle = styles["Book Subtitle"]
     subtitle.font.name = "Aptos"
     subtitle._element.rPr.rFonts.set(qn("w:eastAsia"), "Aptos")
-    subtitle.font.size = Pt(12)
+    subtitle.font.size = Pt(12 + CONTENT_FONT_BUMP)
     subtitle.font.color.rgb = rgb(MUTED)
     subtitle.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
     subtitle.paragraph_format.space_after = Pt(8)
@@ -725,7 +728,7 @@ def setup_styles(document: Document) -> None:
         kicker = styles["Chapter Kicker"]
     kicker.font.name = "Aptos"
     kicker._element.rPr.rFonts.set(qn("w:eastAsia"), "Aptos")
-    kicker.font.size = Pt(9)
+    kicker.font.size = Pt(9 + CONTENT_FONT_BUMP)
     kicker.font.bold = True
     kicker.font.color.rgb = rgb(CYAN_DARK)
     kicker.paragraph_format.space_after = Pt(2)
@@ -893,6 +896,25 @@ def monochrome_book_body(document: Document) -> None:
             cover_skipped = True
             continue
         monochrome_elements([child])
+
+
+def increase_body_content_font_sizes(document: Document) -> None:
+    """Increase readable page content only; headers and footers are separate parts."""
+    for tag in ("w:sz", "w:szCs"):
+        for node in document.element.body.iter(qn(tag)):
+            raw_value = node.get(qn("w:val"))
+            if not raw_value:
+                continue
+            try:
+                half_points = int(raw_value)
+            except ValueError:
+                continue
+            point_size = half_points / 2
+            if point_size <= CONTENT_FONT_BUMP_MAX_SIZE:
+                node.set(
+                    qn("w:val"),
+                    str(int(round((point_size + CONTENT_FONT_BUMP) * 2))),
+                )
 
 
 def monochrome_elements(elements) -> None:
@@ -4497,6 +4519,7 @@ def build() -> None:
 
     # Whole book prints in black & white (the cover table is the only colour exception).
     monochrome_book_body(document)
+    increase_body_content_font_sizes(document)
 
     document.save(OUTPUT)
     print(f"Created: {OUTPUT}")
