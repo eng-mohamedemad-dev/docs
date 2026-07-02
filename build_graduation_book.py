@@ -816,7 +816,7 @@ def add_footer(section, roman: bool = False, mono: bool = False) -> None:
     right = table.cell(0, 2).paragraphs[0]
     right.alignment = WD_ALIGN_PARAGRAPH.RIGHT
     add_field(right, "PAGE", "1")
-    set_run_font(right.runs[-1], "Aptos", 9.5, muted_color, True)
+    set_run_font(right.runs[-1], "Aptos", 15, muted_color, True)
     for cell in table.rows[0].cells:
         set_cell_border(
             cell,
