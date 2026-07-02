@@ -580,14 +580,19 @@ def set_cell_margins(cell, top: int = 100, start: int = 120,
         node.set(qn("w:type"), "dxa")
 
 
-def set_page_number_format(section, fmt: str, start: int = 1) -> None:
+def set_page_number_format(section, fmt: str, start: int | None = None) -> None:
     sect_pr = section._sectPr
     pg_num_type = sect_pr.find(qn("w:pgNumType"))
     if pg_num_type is None:
         pg_num_type = OxmlElement("w:pgNumType")
         sect_pr.append(pg_num_type)
     pg_num_type.set(qn("w:fmt"), fmt)
-    pg_num_type.set(qn("w:start"), str(start))
+    start_attr = qn("w:start")
+    if start is None:
+        if start_attr in pg_num_type.attrib:
+            del pg_num_type.attrib[start_attr]
+    else:
+        pg_num_type.set(start_attr, str(start))
 
 
 def add_field(paragraph, instruction: str, placeholder: str = "") -> None:
@@ -823,8 +828,7 @@ def add_footer(section, roman: bool = False, mono: bool = False) -> None:
 
 
 def add_scope_footer(section, scope_label: str) -> None:
-    """Print-ready (black & white) footer: a section/scope title on the left above a
-    rule, and the page number inside a solid black box on the right.
+    """Print-ready footer with the scope title and plain black page number.
     """
     footer = section.footer
     footer.is_linked_to_previous = False
@@ -852,13 +856,13 @@ def add_scope_footer(section, scope_label: str) -> None:
     )
 
     right = table.cell(0, 1)
-    set_cell_shading(right, BLACK)
+    set_cell_shading(right, WHITE)
     right.vertical_alignment = WD_CELL_VERTICAL_ALIGNMENT.CENTER
     set_cell_margins(right, 40, 60, 40, 60)
     rp = right.paragraphs[0]
     rp.alignment = WD_ALIGN_PARAGRAPH.CENTER
     page_run = rp.add_run()
-    set_run_font(page_run, "Aptos", 15, WHITE, True)
+    set_run_font(page_run, "Aptos", 15, BLACK, True)
     begin = OxmlElement("w:fldChar")
     begin.set(qn("w:fldCharType"), "begin")
     instr = OxmlElement("w:instrText")
@@ -4351,7 +4355,7 @@ def build() -> None:
     chapter_section = document.add_section(WD_SECTION.NEW_PAGE)
     configure_a4(chapter_section)
     unlink_section(chapter_section)
-    set_page_number_format(chapter_section, "decimal", 1)
+    set_page_number_format(chapter_section, "decimal")
     # No running header for Chapter One — the scope title lives only in the footer.
     add_scope_footer(chapter_section, "Introduction Scope")
 
@@ -4386,7 +4390,7 @@ def build() -> None:
     chapter_two_section = document.add_section(WD_SECTION.NEW_PAGE)
     configure_a4(chapter_two_section)
     unlink_section(chapter_two_section)
-    set_page_number_format(chapter_two_section, "decimal", 28)
+    set_page_number_format(chapter_two_section, "decimal")
     # No running header for Chapter Two — the scope title lives only in the footer.
     add_scope_footer(chapter_two_section, "Literature Review Scope")
 
@@ -4404,7 +4408,7 @@ def build() -> None:
     chapter_three_section = document.add_section(WD_SECTION.NEW_PAGE)
     configure_a4(chapter_three_section)
     unlink_section(chapter_three_section)
-    set_page_number_format(chapter_three_section, "decimal", 60)
+    set_page_number_format(chapter_three_section, "decimal")
     # No running header — the scope title lives only in the footer.
     add_scope_footer(chapter_three_section, "System Analysis Scope")
 
@@ -4422,7 +4426,7 @@ def build() -> None:
     chapter_four_section = document.add_section(WD_SECTION.NEW_PAGE)
     configure_a4(chapter_four_section)
     unlink_section(chapter_four_section)
-    set_page_number_format(chapter_four_section, "decimal", 121)
+    set_page_number_format(chapter_four_section, "decimal")
     # No running header — the scope title lives only in the footer.
     add_scope_footer(chapter_four_section, "System Design Scope")
 
@@ -4440,7 +4444,7 @@ def build() -> None:
     chapter_five_section = document.add_section(WD_SECTION.NEW_PAGE)
     configure_a4(chapter_five_section)
     unlink_section(chapter_five_section)
-    set_page_number_format(chapter_five_section, "decimal", 154)
+    set_page_number_format(chapter_five_section, "decimal")
     # No running header — the scope title lives only in the footer.
     add_scope_footer(chapter_five_section, "System Implementation Scope")
 
@@ -4458,7 +4462,7 @@ def build() -> None:
     chapter_six_section = document.add_section(WD_SECTION.NEW_PAGE)
     configure_a4(chapter_six_section)
     unlink_section(chapter_six_section)
-    set_page_number_format(chapter_six_section, "decimal", 189)
+    set_page_number_format(chapter_six_section, "decimal")
     # No running header — the scope title lives only in the footer.
     add_scope_footer(chapter_six_section, "Testing and Evaluation Scope")
 
@@ -4476,7 +4480,7 @@ def build() -> None:
     chapter_seven_section = document.add_section(WD_SECTION.NEW_PAGE)
     configure_a4(chapter_seven_section)
     unlink_section(chapter_seven_section)
-    set_page_number_format(chapter_seven_section, "decimal", 214)
+    set_page_number_format(chapter_seven_section, "decimal")
     # No running header — the scope title lives only in the footer.
     add_scope_footer(chapter_seven_section, "Conclusion and Future Work Scope")
 
