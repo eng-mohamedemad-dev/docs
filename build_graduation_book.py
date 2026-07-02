@@ -1294,7 +1294,7 @@ def add_cover(document: Document) -> None:
     lp.add_run().add_picture(str(branding_asset("university-logo.jpeg")), width=Cm(2.6))
     cp = logos.cell(0, 1).paragraphs[0]
     cp.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    cp.add_run().add_picture(str(branding_asset("qr-cover.png")), width=Cm(2.0))
+    cp.add_run().add_picture(str(branding_asset("qr-cover.png")), width=Cm(2.6))
     rp = logos.cell(0, 2).paragraphs[0]
     rp.alignment = WD_ALIGN_PARAGRAPH.CENTER
     rp.add_run().add_picture(str(branding_asset("faculty-logo.jpg")), width=Cm(2.6))
