@@ -59,6 +59,7 @@ from chapter_seven_content import (
 ROOT = Path(__file__).resolve().parents[2]
 HERE = Path(__file__).resolve().parent
 OUTPUT = HERE / "CrimeLens_Graduation_Book.docx"
+OUTPUT_COVER = HERE / "CrimeLens_Cover_Page.docx"
 
 PRESENTATION_ASSETS = HERE / "assets"
 BRANDING = PRESENTATION_ASSETS / "branding"
@@ -900,21 +901,25 @@ def monochrome_book_body(document: Document) -> None:
 
 def increase_body_content_font_sizes(document: Document) -> None:
     """Increase readable page content only; headers and footers are separate parts."""
+    body_elements = list(document.element.body)
+    if body_elements and body_elements[0].tag == qn("w:tbl"):
+        body_elements = body_elements[1:]
     for tag in ("w:sz", "w:szCs"):
-        for node in document.element.body.iter(qn(tag)):
-            raw_value = node.get(qn("w:val"))
-            if not raw_value:
-                continue
-            try:
-                half_points = int(raw_value)
-            except ValueError:
-                continue
-            point_size = half_points / 2
-            if point_size <= CONTENT_FONT_BUMP_MAX_SIZE:
-                node.set(
-                    qn("w:val"),
-                    str(int(round((point_size + CONTENT_FONT_BUMP) * 2))),
-                )
+        for element in body_elements:
+            for node in element.iter(qn(tag)):
+                raw_value = node.get(qn("w:val"))
+                if not raw_value:
+                    continue
+                try:
+                    half_points = int(raw_value)
+                except ValueError:
+                    continue
+                point_size = half_points / 2
+                if point_size <= CONTENT_FONT_BUMP_MAX_SIZE:
+                    node.set(
+                        qn("w:val"),
+                        str(int(round((point_size + CONTENT_FONT_BUMP) * 2))),
+                    )
 
 
 def monochrome_elements(elements) -> None:
@@ -1287,6 +1292,9 @@ def add_cover(document: Document) -> None:
     lp = logos.cell(0, 0).paragraphs[0]
     lp.alignment = WD_ALIGN_PARAGRAPH.CENTER
     lp.add_run().add_picture(str(branding_asset("university-logo.jpeg")), width=Cm(2.6))
+    cp = logos.cell(0, 1).paragraphs[0]
+    cp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    cp.add_run().add_picture(str(branding_asset("qr-cover.png")), width=Cm(2.0))
     rp = logos.cell(0, 2).paragraphs[0]
     rp.alignment = WD_ALIGN_PARAGRAPH.CENTER
     rp.add_run().add_picture(str(branding_asset("faculty-logo.jpg")), width=Cm(2.6))
@@ -1312,7 +1320,7 @@ def add_cover(document: Document) -> None:
     emblem.alignment = WD_ALIGN_PARAGRAPH.CENTER
     emblem.paragraph_format.space_before = Pt(6)
     emblem.paragraph_format.space_after = Pt(2)
-    emblem.add_run().add_picture(str(branding_asset("crimelens-logo.png")), width=Cm(3.4))
+    emblem.add_run().add_picture(str(branding_asset("logo-keyed.png")), width=Cm(3.4))
 
     p = cell.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -4336,6 +4344,26 @@ def add_chapter_seven_references(document: Document) -> None:
         set_run_font(number_run, "Cambria", 9.5, NAVY, True)
         reference_run = paragraph.add_run(reference)
         set_run_font(reference_run, "Cambria", 9.5, TEXT)
+
+
+def build_cover_only() -> None:
+    HERE.mkdir(parents=True, exist_ok=True)
+    document = Document()
+    setup_styles(document)
+    set_document_background(document)
+    enable_update_fields(document)
+
+    properties = document.core_properties
+    properties.title = "CrimeLens Cover Page"
+    properties.subject = "Standalone graduation-project cover page"
+    properties.author = "CrimeLens Graduation Project Team"
+    properties.comments = (
+        "Standalone editable cover generated for Beni-Suef University, academic year 2025/2026."
+    )
+
+    add_cover(document)
+    document.save(OUTPUT_COVER)
+    print(f"Created: {OUTPUT_COVER}")
 
 
 def build() -> None:
